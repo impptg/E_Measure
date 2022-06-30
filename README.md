@@ -1,7 +1,9 @@
 # E_Measure
 铁基智测Android端从Java -> Kotlin的美吱吱更新
 ## Day01
-简单登陆界面 + Mock Post
+1. 简单登陆界面, Mock Post
+2. 登陆密码的显示/隐藏, LOGO
+
 ### Mock Post
 ```
 地址

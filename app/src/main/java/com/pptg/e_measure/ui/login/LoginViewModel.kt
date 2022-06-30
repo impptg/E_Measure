@@ -18,6 +18,7 @@ class LoginViewModel : ViewModel(){
     }
     var user_id = ""
     var user_pswd = ""
+    var isPreview = false
 
     fun Login(){
         val appService = ServiceCreator.create<ApiNet>()

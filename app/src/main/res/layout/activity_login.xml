@@ -19,6 +19,7 @@
 
     <EditText
         android:id="@+id/editText"
+        android:hint="账号"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -27,17 +28,20 @@
 
     <EditText
         android:id="@+id/editText2"
+        android:hint="密码"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:inputType="textPassword"
+        android:inputType = "textPassword"
         app:layout_constraintBottom_toTopOf="@+id/button"
         tools:layout_editor_absoluteX="0dp" />
 
     <ImageButton
+        android:id="@+id/preview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_baseline_remove_red_eye_24"
+        android:clickable="true"
+        android:background="@drawable/ic_preview_close"
         app:layout_constraintBottom_toBottomOf="@+id/editText2"
         app:layout_constraintEnd_toEndOf="@+id/editText2"
         app:layout_constraintTop_toTopOf="@+id/editText2" />

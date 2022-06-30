@@ -2,6 +2,10 @@ package com.pptg.e_measure.ui.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -16,6 +20,7 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(viewBinding.root)
         viewBinding.button.setOnClickListener(this)
+        viewBinding.preview.setOnClickListener(this)
         viewBinding.editText.setText(viewModel.user_id)
         viewBinding.editText2.setText(viewModel.user_pswd)
     }
@@ -29,8 +34,28 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
                 viewModel.Login()
                 //Toast.makeText(this,"Login",Toast.LENGTH_SHORT).show()
             }
+            R.id.preview ->{
+                if(viewModel.isPreview) {
+                    Log.d(TAG, "onClick: 不可见")
+                    Log.d(TAG, "onClick: "+viewBinding.editText2.inputType)
+                    p0.setBackgroundResource(R.drawable.ic_preview_close)
+                    viewModel.isPreview = false
+                    viewBinding.editText2.transformationMethod = PasswordTransformationMethod.getInstance()
+                    viewBinding.editText2.setSelection(viewBinding.editText2.text.length)
+                }else{
+                    Log.d(TAG, "onClick: 可见")
+                    Log.d(TAG, "onClick: "+viewBinding.editText2.inputType)
+                    p0.setBackgroundResource(R.drawable.ic_preview_open)
+                    viewModel.isPreview = true
+                    viewBinding.editText2.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                    viewBinding.editText2.setSelection(viewBinding.editText2.text.length)
+                }
+            }
             null -> Toast.makeText(this,"NULL",Toast.LENGTH_SHORT).show()
         }
     }
-
+    
+    companion object {
+        private const val TAG = "LoginActivity"
+    }
 }
