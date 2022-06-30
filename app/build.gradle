@@ -6,6 +6,8 @@ plugins {
 android {
     compileSdk 32
 
+    lintOptions { abortOnError false }
+
     defaultConfig {
         applicationId "com.pptg.e_measure"
         minSdk 30
