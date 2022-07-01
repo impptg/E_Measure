@@ -31,7 +31,8 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
                 //TODO 登陆相关
                 viewModel.user_id = viewBinding.editText.text.toString()
                 viewModel.user_pswd = viewBinding.editText2.text.toString()
-                viewModel.Login()
+                viewModel.Task()
+                //viewModel.Login()
                 //Toast.makeText(this,"Login",Toast.LENGTH_SHORT).show()
             }
             R.id.preview ->{

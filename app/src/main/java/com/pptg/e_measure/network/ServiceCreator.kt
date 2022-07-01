@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceCreator {
 
-    private const val BASE_URL = "https://mockapi.eolink.com/6FqsKLQ8c17859637669cdbe2b9e64449d133f20ee8428f/user/"
+    private const val BASE_URL = "https://mock.apifox.cn/m1/1217026-0-default/"
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
