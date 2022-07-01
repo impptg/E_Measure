@@ -24,8 +24,8 @@ class LoginViewModel : ViewModel(){
         val appService = ServiceCreator.create<ApiNet>()
         appService.Login(user_id,user_pswd).enqueue(object : Callback<LoginBean> {
             override fun onResponse(call: Call<LoginBean>, response: Response<LoginBean>) {
-                val body = response.body()
-                Toast.makeText(EMeasureApplication.context, body.toString(), Toast.LENGTH_SHORT).show()
+                val body = response.body() as LoginBean
+                Toast.makeText(EMeasureApplication.context, body.login, Toast.LENGTH_SHORT).show()
                 Log.d(TAG, body.toString())
             }
 
