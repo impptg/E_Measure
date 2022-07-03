@@ -1,5 +1,7 @@
 package com.pptg.e_measure.ui.login
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
@@ -10,10 +12,13 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import com.pptg.e_measure.EMeasureApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.ActivityLoginBinding
+import com.pptg.e_measure.ui.home.HomeActivity
 
 class LoginActivity : AppCompatActivity(),View.OnClickListener {
+    val context:Context = this
     val viewModel by lazy{ ViewModelProvider(this).get(LoginViewModel::class.java)}
     val viewBinding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,8 +36,10 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
                 //TODO 登陆相关
                 viewModel.user_id = viewBinding.editText.text.toString()
                 viewModel.user_pswd = viewBinding.editText2.text.toString()
-                viewModel.Task()
-                //viewModel.Login()
+                // viewModel.Task()
+                viewModel.Login()
+                var intent = Intent(context,HomeActivity::class.java)
+                startActivity(intent)
                 //Toast.makeText(this,"Login",Toast.LENGTH_SHORT).show()
             }
             R.id.preview ->{

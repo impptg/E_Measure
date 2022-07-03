@@ -2,7 +2,6 @@ package com.pptg.e_measure.network
 
 import android.util.Log
 import com.google.gson.Gson
-import com.pptg.e_measure.bean.LoginBean
 import java.io.*
 import java.lang.StringBuilder
 import java.net.HttpURLConnection

@@ -4,7 +4,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.pptg.e_measure.EMeasureApplication
-import com.pptg.e_measure.bean.LoginBean
+import com.pptg.e_measure.bean.LoginResponse
 import com.pptg.e_measure.bean.TaskResponse
 import com.pptg.e_measure.network.ApiNet
 import com.pptg.e_measure.network.HttpCore
@@ -23,14 +23,14 @@ class LoginViewModel : ViewModel(){
 
     fun Login(){
         val appService = ServiceCreator.create<ApiNet>()
-        appService.Login(user_id,user_pswd).enqueue(object : Callback<LoginBean> {
-            override fun onResponse(call: Call<LoginBean>, response: Response<LoginBean>) {
-                val body = response.body() as LoginBean
+        appService.Login(user_id,user_pswd).enqueue(object : Callback<LoginResponse> {
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                val body = response.body() as LoginResponse
                 Toast.makeText(EMeasureApplication.context, body.data.id, Toast.LENGTH_SHORT).show()
                 Log.d(TAG, body.toString())
             }
 
-            override fun onFailure(call: Call<LoginBean>, t: Throwable) {
+            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 t.printStackTrace()
             }
         })

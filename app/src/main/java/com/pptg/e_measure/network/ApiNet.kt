@@ -1,6 +1,6 @@
 package com.pptg.e_measure.network
 
-import com.pptg.e_measure.bean.LoginBean
+import com.pptg.e_measure.bean.LoginResponse
 import com.pptg.e_measure.bean.TaskResponse
 import retrofit2.Call
 import retrofit2.http.Field
@@ -13,7 +13,7 @@ interface ApiNet {
     @FormUrlEncoded
     @POST("login")
     fun Login(@Field("id") user_name:String,
-              @Field("pswd") user_pswd:String): Call<LoginBean>
+              @Field("pswd") user_pswd:String): Call<LoginResponse>
 
     @GET("task")
     fun Task(): Call<TaskResponse>

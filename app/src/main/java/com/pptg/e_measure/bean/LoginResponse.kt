@@ -2,7 +2,7 @@ package com.pptg.e_measure.bean
 
 import com.google.gson.annotations.SerializedName
 
-data class LoginBean(@SerializedName("msg") val msg:String,
+data class LoginResponse(@SerializedName("msg") val msg:String,
                 @SerializedName("code") val code:String,
                 @SerializedName("data") val data:LoginBeanData)
 
