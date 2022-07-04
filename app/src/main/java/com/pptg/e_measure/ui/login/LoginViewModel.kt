@@ -7,12 +7,10 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.pptg.e_measure.EMeasureApplication
+import com.pptg.e_measure.MainActivity
 import com.pptg.e_measure.bean.LoginResponse
-import com.pptg.e_measure.bean.TaskResponse
 import com.pptg.e_measure.network.ApiNet
-import com.pptg.e_measure.network.HttpCore
 import com.pptg.e_measure.network.ServiceCreator
-import com.pptg.e_measure.ui.home.HomeActivity
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Call
@@ -34,7 +32,7 @@ class LoginViewModel : ViewModel(){
                     Toast.makeText(EMeasureApplication.context, body.data.id, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, body.toString())
                     val context = view.context
-                    var intent = Intent(context,HomeActivity::class.java)
+                    var intent = Intent(context,MainActivity::class.java)
                     context.startActivity(intent)
                 }else{
                     Toast.makeText(EMeasureApplication.context, "账号或密码错误", Toast.LENGTH_SHORT).show()

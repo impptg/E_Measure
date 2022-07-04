@@ -1,21 +1,16 @@
 package com.pptg.e_measure.ui.login
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.InputType
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.viewbinding.ViewBinding
-import com.pptg.e_measure.EMeasureApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.ActivityLoginBinding
-import com.pptg.e_measure.ui.home.HomeActivity
 
 class LoginActivity : AppCompatActivity(),View.OnClickListener {
     val context:Context = this
