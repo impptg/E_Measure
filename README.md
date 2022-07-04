@@ -10,3 +10,7 @@
     2. ~~eolink的response的json不能嵌套array~~
     3. 选择了ApiFox，能满足大部分需求而且是中文
 2. Api地址:https://www.apifox.cn/apidoc/shared-00b6acc0-98ab-4c93-98b6-13f36c3d8ac4
+
+## Day03
+1. 合并登陆跳转和主目录
+2. 实现远程任务报表合并

@@ -47,19 +47,4 @@ class LoginViewModel : ViewModel(){
             }
         })
     }
-
-    fun Task(){
-        val appService = ServiceCreator.create<ApiNet>()
-        appService.Task().enqueue(object : Callback<TaskResponse>{
-            override fun onResponse(call: Call<TaskResponse>, response: Response<TaskResponse>) {
-                val body = response.body() as TaskResponse
-                Log.d(TAG, body.toString())
-            }
-
-            override fun onFailure(call: Call<TaskResponse>, t: Throwable) {
-                t.printStackTrace()
-            }
-
-        })
-    }
 }
