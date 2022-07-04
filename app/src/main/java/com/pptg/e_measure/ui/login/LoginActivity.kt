@@ -37,9 +37,7 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
                 viewModel.user_id = viewBinding.editText.text.toString()
                 viewModel.user_pswd = viewBinding.editText2.text.toString()
                 // viewModel.Task()
-                viewModel.Login()
-                var intent = Intent(context,HomeActivity::class.java)
-                startActivity(intent)
+                viewModel.Login(p0)
                 //Toast.makeText(this,"Login",Toast.LENGTH_SHORT).show()
             }
             R.id.preview ->{
