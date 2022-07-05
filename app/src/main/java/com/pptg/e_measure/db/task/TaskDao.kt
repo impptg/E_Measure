@@ -1,4 +1,4 @@
 package com.pptg.e_measure.db.task
 
-class TaskDao {
+interface TaskDao {
 }

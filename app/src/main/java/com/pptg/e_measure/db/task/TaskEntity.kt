@@ -4,10 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "task")
+@Entity(tableName = "Task")
 class TaskEntity {
     @PrimaryKey(autoGenerate = false)
-    val TaskID:Int = 0
+    val taskID:Int = 0
 
     @ColumnInfo(name = "name")
     val name:String = "name"
