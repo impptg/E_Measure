@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.bean.TaskBeanData
 import com.pptg.e_measure.db.task.TaskEntity
@@ -28,9 +30,18 @@ class TaskAdapter(var mList:List<TaskEntity>):RecyclerView.Adapter<TaskAdapter.V
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val mBean: TaskEntity = mList[position]
+        when(position%3) {
+            0 -> holder.ll_item.background = ResourcesCompat.getDrawable(EMApplication.context.resources,
+                R.drawable.item_task_1, null)
+            1 -> holder.ll_item.background = ResourcesCompat.getDrawable(EMApplication.context.resources,
+                R.drawable.item_task_2, null)
+            2 -> holder.ll_item.background = ResourcesCompat.getDrawable(EMApplication.context.resources,
+                R.drawable.item_task_3, null)
+        }
+
         holder.tv_name.text = mBean.name
         holder.tv_disp.text = mBean.disp
-        holder.tv_index.text = "001"
+        holder.tv_index.text = mBean.taskID.toString()
     }
 
     override fun getItemCount(): Int {

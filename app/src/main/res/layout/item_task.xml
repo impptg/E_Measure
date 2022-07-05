@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="@dimen/padding_dp">
+    android:paddingRight="@dimen/padding_dp"
+    android:paddingLeft="@dimen/padding_dp"
+    android:paddingTop="@dimen/padding_dp">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -11,7 +13,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/item_blue">
+            android:background="@drawable/item_task_1">
             <TextView
                 android:id="@+id/tv_name"
                 android:text="CZ2553"

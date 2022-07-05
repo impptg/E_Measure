@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <!--透明-->
+    <color name="transparent">#00FFFFFF</color>
+
+    <!--黑白-->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!--灰色-->
+    <color name="gray_100">#EDEDED</color>
+    <color name="gray_200">#A9A9A9</color>
+    <color name="gray_300">#707070</color>
+    <color name="gray_500">#4B4B4B</color>
+    <color name="gray_700">#37393D</color>
+
+    <!--橘黄-->
+    <color name="orange_300">#ffb6c1</color>
+    <color name="orange_400">#ffa07a</color>
+    <color name="orange_500">#ff8c00</color>
+    <color name="orange_700">#ff7f50</color>
+
+    <!--绿色-->
+    <color name="green_400">#28B660</color>
+    <color name="green_500">#2e8b57</color>
+    <color name="green_600">#228b22</color>
+
+    <!--蓝绿-->
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!--蓝色-->
+    <color name="blue_300">#0D67D5</color>
     <color name="blue_500">#0B4A95</color>
+    <color name="deep_600">#26354F</color>
+    <color name="blue_700">#203240</color>
+
+    <!--紫-->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
 
 
-    <!-- 常用配色 -->
+    <!-- 备胎 -->
     <color name="ivory">#fffff0</color><!--象牙色 -->
     <color name="lightyellow">#ffffe0</color><!--亮黄色 -->
     <color name="yellow">#ffff00</color><!--黄色 -->

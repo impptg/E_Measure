@@ -27,3 +27,6 @@
 2. 在线读取、离线存储数据表
 <img src="markdown/16570319981748.jpg" width = 50%/>
 
+3. 搞点颜色瞧瞧
+<img src="markdown/16570363680800.jpg" width = 25%/>
+

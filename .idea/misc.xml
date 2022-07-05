@@ -12,6 +12,8 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/drawable/ic_preview_close.xml" value="0.41302083333333334" />
         <entry key="app/src/main/res/drawable/item_blue.xml" value="0.3182291666666667" />
+        <entry key="app/src/main/res/drawable/item_task_2.xml" value="0.3921875" />
+        <entry key="app/src/main/res/drawable/item_task_3.xml" value="0.3921875" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2796875" />
@@ -19,7 +21,7 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.37604166666666666" />
-        <entry key="app/src/main/res/layout/item_task.xml" value="0.526876439471199" />
+        <entry key="app/src/main/res/layout/item_task.xml" value="0.31365313653136534" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2796875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_app.xml" value="0.41302083333333334" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2140625" />
