@@ -1,8 +1,11 @@
 # E_Measure
-铁基智测Android端从Java -> Kotlin的美吱吱更新
+铁基智测Android端从Java -> Kotlin的美吱吱更新,JAVA版部分界面如下
+<img src="markdown/16569929851381.jpg" width = 25%/><img src="markdown/16569929995514.jpg" width = 25%/><img src="markdown/16569930135785.jpg" width = 25%/><img src="markdown/16569930231330.jpg" width = 25%/>
 ## Day01
 1. 简单登陆界面, eolink Mock
 2. 登陆密码的显示/隐藏, LOGO
+
+<img src="markdown/16569928880585.jpg" width = 25%/>
 
 ## Day02
 1. 选择Mock软件
@@ -16,5 +19,7 @@
 2. 实现远程任务报表合并
 3. 添加导航页
 
-<img src="markdown/16569417851196.jpg" width = 30%/>
+<img src="markdown/16569417851196.jpg" width = 25%/>
 
+## Day04
+1. 使用ROOM初步配置数据库结构

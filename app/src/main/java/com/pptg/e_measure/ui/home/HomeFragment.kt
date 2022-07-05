@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.pptg.e_measure.EMeasureApplication
+import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.FragmentHomeBinding
 
@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
 
         viewModel.Task()
         // Thread.sleep(1000)
-        val layoutManager = LinearLayoutManager(EMeasureApplication.context)
+        val layoutManager = LinearLayoutManager(EMApplication.context)
         // adapter = TaskAdapter(viewModel.mList)
         binding.rvHome.adapter = viewModel.adapter
         binding.rvHome.layoutManager = layoutManager

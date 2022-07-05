@@ -6,7 +6,7 @@ import android.view.View
 
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
-import com.pptg.e_measure.EMeasureApplication
+import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.MainActivity
 import com.pptg.e_measure.bean.LoginResponse
 import com.pptg.e_measure.network.ApiNet
@@ -29,13 +29,13 @@ class LoginViewModel : ViewModel(){
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 val body = response.body() as LoginResponse
                 if (body.data.login.equals("true")){
-                    Toast.makeText(EMeasureApplication.context, body.data.id, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(EMApplication.context, body.data.id, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, body.toString())
                     val context = view.context
                     var intent = Intent(context,MainActivity::class.java)
                     context.startActivity(intent)
                 }else{
-                    Toast.makeText(EMeasureApplication.context, "账号或密码错误", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(EMApplication.context, "账号或密码错误", Toast.LENGTH_SHORT).show()
                     Log.d(TAG, body.toString())
                 }
             }
