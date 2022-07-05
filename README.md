@@ -1,6 +1,7 @@
 # E_Measure
 铁基智测Android端从Java -> Kotlin的美吱吱更新,JAVA版部分界面如下
-<img src="markdown/16569929851381.jpg" width = 25%/><img src="markdown/16569929995514.jpg" width = 25%/><img src="markdown/16569930135785.jpg" width = 25%/><img src="markdown/16569930231330.jpg" width = 25%/>
+<img src="markdown/16569932800775.jpg" width = 100%/>
+
 ## Day01
 1. 简单登陆界面, eolink Mock
 2. 登陆密码的显示/隐藏, LOGO
