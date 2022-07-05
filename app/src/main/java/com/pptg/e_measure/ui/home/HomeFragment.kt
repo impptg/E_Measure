@@ -33,18 +33,14 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        viewModel.Task()
+
+         viewModel.Task()
         // Thread.sleep(1000)
         val layoutManager = LinearLayoutManager(EMApplication.context)
         // adapter = TaskAdapter(viewModel.mList)
         binding.rvHome.adapter = viewModel.adapter
         binding.rvHome.layoutManager = layoutManager
 
-
-//        val textView: TextView = binding.textHome
-//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
         return root
     }
 

@@ -1,6 +1,7 @@
 package com.pptg.e_measure.bean
 
 import com.google.gson.annotations.SerializedName
+import com.pptg.e_measure.db.task.TaskEntity
 
 /**
  * TaskResponse: 用于接受服务器最新"数据报表"的响应
@@ -9,7 +10,7 @@ import com.google.gson.annotations.SerializedName
 
 data class TaskResponse(@SerializedName("msg") val msg:String,
                         @SerializedName("code") val code:String,
-                        @SerializedName("data") val data:List<TaskBeanData>)
+                        @SerializedName("data") val data:List<TaskEntity>)
 
 // TaskBeanData
 //{

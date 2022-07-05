@@ -12,13 +12,13 @@ import com.pptg.e_measure.db.task.TaskEntity
 @Database(entities = [TaskEntity::class,HistoryEntity::class], version = 1)
 abstract class DBManager :RoomDatabase(){
     companion object{
-        val single by lazy { Single.sin }
+        var single = Single.sin
     }
     abstract fun getTaskDao():TaskDao
     abstract fun getHistoryDao():HistoryDao
 
     private object Single {
-        val sin :DBManager = Room.databaseBuilder(
+        var sin :DBManager = Room.databaseBuilder(
             EMApplication.context,
             DBManager::class.java,
             "User.db"

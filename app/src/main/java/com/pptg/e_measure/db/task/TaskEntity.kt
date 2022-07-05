@@ -3,24 +3,26 @@ package com.pptg.e_measure.db.task
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "Task")
 class TaskEntity {
     @PrimaryKey(autoGenerate = false)
-    val taskID:Int = 0
+    @SerializedName("id")
+    var taskID:Int = 0
 
     @ColumnInfo(name = "name")
-    val name:String = "name"
+    var name:String = "name"
 
     @ColumnInfo(name = "disp")
-    val disp:String = "disp"
+    var disp:String = "disp"
 
     @ColumnInfo(name = "attr")
-    val attr:String = "attr"
+    var attr:String = "attr"
 
     @ColumnInfo(name = "lim_l")
-    val lim_l:String = "lim_l"
+    var lim_l:String = "lim_l"
 
     @ColumnInfo(name = "lim_r")
-    val lim_r:String = "lim_r"
+    var lim_r:String = "lim_r"
 }

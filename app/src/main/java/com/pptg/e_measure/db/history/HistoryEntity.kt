@@ -13,23 +13,23 @@ class HistoryEntity {
     var name:String = "name"
 
     @ColumnInfo(name = "disp")
-    val disp:String = "disp"
+    var disp:String = "disp"
 
-    @ColumnInfo(name = "value")
-    val value:String = "value"
+    @ColumnInfo(name = "varue")
+    var varue:String = "varue"
 
     @ColumnInfo(name = "attr")
-    val attr:String = "attr"
+    var attr:String = "attr"
 
     @ColumnInfo(name = "lim_l")
-    val lim_l:String = "lim_l"
+    var lim_l:String = "lim_l"
 
     @ColumnInfo(name = "lim_r")
-    val lim_r:String = "lim_r"
+    var lim_r:String = "lim_r"
 
     @ColumnInfo(name = "createTime")
-    val createTime:String = "createTime"
+    var createTime:String = "createTime"
 
     @ColumnInfo(name = "taskID")
-    val taskID:String = "taskID"
+    var taskID:String = "taskID"
 }
