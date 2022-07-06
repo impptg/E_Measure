@@ -21,6 +21,8 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/item_blank.xml" value="0.2328125" />
+        <entry key="app/src/main/res/layout/item_settings.xml" value="0.2328125" />
         <entry key="app/src/main/res/layout/item_task.xml" value="0.31365313653136534" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2796875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_app.xml" value="0.41302083333333334" />
