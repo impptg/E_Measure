@@ -1,6 +1,7 @@
 package com.pptg.e_measure.ui.home
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.bean.TaskResponse
@@ -23,7 +24,13 @@ class HomeViewModel():ViewModel() {
     init {
         mList = EMApplication.dbManager.getTaskDao().queryTask()
         adapter.mList = mList
-        Log.d(TAG, ": ")
+    }
+
+    val mLiveList = MutableLiveData<List<TaskEntity>>()
+
+    fun refresh(){
+        Task()
+        // mLiveList.value = mList
     }
 
     fun Task(){
@@ -32,7 +39,8 @@ class HomeViewModel():ViewModel() {
             override fun onResponse(call: Call<TaskResponse>, response: Response<TaskResponse>) {
                 val body = response.body() as TaskResponse
                 adapter.mList = body.data
-                EMApplication.dbManager.getTaskDao().insertTask(adapter.mList)
+                mLiveList.value = body.data
+                // EMApplication.dbManager.getTaskDao().insertTask(adapter.mList)
                 adapter.notifyDataSetChanged()
                 mList = EMApplication.dbManager.getTaskDao().queryTask()
                 Log.d(TAG, body.toString())

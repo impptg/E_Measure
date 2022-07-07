@@ -13,4 +13,8 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.E_Measure.main" parent="Theme.E_Measure">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
 </resources>

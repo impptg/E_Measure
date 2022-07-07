@@ -39,3 +39,7 @@
 1. Material一下
 <img src="markdown/16571897781921.jpg" width = 25%/>
 
+2. 添加刷新功能，有冗余部分，明天处理下
+
+<img src="markdown/16572068127692.jpg" width = 25%/><img src="markdown/16572070159561.jpg" width = 25%/>
+ 

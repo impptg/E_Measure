@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.annotation.UiThread
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -12,6 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.FragmentHomeBinding
+import java.lang.Exception
+import kotlin.concurrent.thread
 
 class HomeFragment : Fragment() {
 
@@ -39,7 +43,32 @@ class HomeFragment : Fragment() {
         binding.rvHome.layoutManager = layoutManager
         binding.rvHome.adapter = viewModel.adapter
 
+        viewModel.mLiveList.observe(viewLifecycleOwner, Observer { mLiveList ->
+            if(mLiveList != null){
+                Toast.makeText(EMApplication.context,mLiveList.toString(),Toast.LENGTH_SHORT).show()
+            }else{
+
+            }
+            binding.slHome.isRefreshing = false
+        })
+
+        binding.slHome.setOnRefreshListener {
+            viewModel.refresh()
+        }
         return root
+    }
+
+    fun stopp(){
+        thread {
+            Thread.sleep(2000)
+            activity?.runOnUiThread{
+                try {
+                    binding.slHome.isRefreshing = false
+                }catch (e:Exception){
+                    e.printStackTrace()
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {
