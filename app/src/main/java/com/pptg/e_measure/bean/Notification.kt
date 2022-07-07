@@ -1,4 +1,4 @@
 package com.pptg.e_measure.bean
 
 
-class Notificaton(var item:String,var imgeId : Int)
+class Notificaton(var item:String,var imgeId : Int = -1,var type:Int)

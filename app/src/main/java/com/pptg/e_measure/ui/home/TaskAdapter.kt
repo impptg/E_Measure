@@ -1,6 +1,5 @@
-package com.pptg.e_measure.adapter
+package com.pptg.e_measure.ui.home
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
-import com.pptg.e_measure.bean.TaskBeanData
 import com.pptg.e_measure.db.task.TaskEntity
 
 class TaskAdapter(var mList:List<TaskEntity>):RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
@@ -24,8 +22,7 @@ class TaskAdapter(var mList:List<TaskEntity>):RecyclerView.Adapter<TaskAdapter.V
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_task, parent, false)
-        val holder = ViewHolder(view)
-        return holder
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -47,6 +44,4 @@ class TaskAdapter(var mList:List<TaskEntity>):RecyclerView.Adapter<TaskAdapter.V
     override fun getItemCount(): Int {
         return mList.size
     }
-
-
 }

@@ -35,11 +35,9 @@ class HomeFragment : Fragment() {
 
 
         // viewModel.Task()
-        // Thread.sleep(1000)
         val layoutManager = LinearLayoutManager(EMApplication.context)
-        // adapter = TaskAdapter(viewModel.mList)
-        binding.rvHome.adapter = viewModel.adapter
         binding.rvHome.layoutManager = layoutManager
+        binding.rvHome.adapter = viewModel.adapter
 
         return root
     }

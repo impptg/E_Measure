@@ -3,13 +3,10 @@ package com.pptg.e_measure.ui.home
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.pptg.e_measure.EMApplication
-import com.pptg.e_measure.adapter.TaskAdapter
-import com.pptg.e_measure.bean.TaskBeanData
 import com.pptg.e_measure.bean.TaskResponse
 import com.pptg.e_measure.db.task.TaskEntity
 import com.pptg.e_measure.network.ApiNet
 import com.pptg.e_measure.network.ServiceCreator
-import com.pptg.e_measure.ui.login.LoginViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -1,40 +1,25 @@
 package com.pptg.e_measure.ui.settings
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.pptg.e_measure.adapter.TaskAdapter
+import com.pptg.e_measure.R
+import com.pptg.e_measure.ui.settings.SettingsAdapter
+import com.pptg.e_measure.bean.Notificaton
+
 
 class SettingsViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+    companion object{
+        private const val TAG = "NotificationViewModel"
     }
-    val text: LiveData<String> = _text
-
-    lateinit var mList:MutableList<SettingsBean>
-    lateinit var adapter: SettingAdapter
-
-    class SettingsBean(
-        val type:Int,
-        val text:String){
+    var itemList = ArrayList<Notificaton>()
+    val adapter = SettingsAdapter(itemList)
+    fun notification() {
+        itemList.add(Notificaton("用户",-1,1))
+        itemList.add(Notificaton("BLANK",-1,3))
+        itemList.add(Notificaton("BLANK",-1,3))
+        itemList.add(Notificaton("账户与安全",R.drawable.ic_launcher_foreground,2))
+        itemList.add(Notificaton("更新报表",R.drawable.ic_launcher_foreground,2))
+        itemList.add(Notificaton("设置字体",R.drawable.ic_launcher_foreground,2))
     }
 
-    init {
-        mList = mutableListOf<SettingsBean>()
-        val mBean:SettingsBean = SettingsBean(1,"亮度")
-        mList.add(0,mBean)
-
-        val mBean2:SettingsBean = SettingsBean(1,"字体")
-        mList.add(1,mBean2)
-
-        val mBean3:SettingsBean = SettingsBean(2,"")
-        mList.add(2,mBean3)
-
-        val mBean4:SettingsBean = SettingsBean(1,"其他")
-        mList.add(3,mBean4)
-
-        adapter = SettingAdapter(mList)
-
-    }
 }

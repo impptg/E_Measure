@@ -3,19 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1365" />
         <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/fragment_notification.xml" value="0.12604166666666666" />
-        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/fragment_settings.xml" value="0.12318840579710146" />
-        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/item_settings.xml" value="0.2056159420289855" />
-        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/menu/bottom_nav_menu.xml" value="0.23020833333333332" />
-        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1395" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.3229166666666667" />
         <entry key="app/src/main/res/drawable/btn_preview.xml" value="0.41302083333333334" />
+        <entry key="app/src/main/res/drawable/ic_baseline_add_chart_24.xml" value="0.39739583333333334" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_right_alt_24.xml" value="0.39739583333333334" />
+        <entry key="app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.39739583333333334" />
         <entry key="app/src/main/res/drawable/ic_baseline_remove_red_eye_24.xml" value="0.41302083333333334" />
+        <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.39739583333333334" />
+        <entry key="app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.39739583333333334" />
         <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.29583333333333334" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.39739583333333334" />
+        <entry key="app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.39739583333333334" />
         <entry key="app/src/main/res/drawable/ic_preview_close.xml" value="0.41302083333333334" />
         <entry key="app/src/main/res/drawable/item_blue.xml" value="0.3182291666666667" />
         <entry key="app/src/main/res/drawable/item_task_2.xml" value="0.3921875" />
@@ -25,11 +26,15 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2796875" />
+        <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/item_blank.xml" value="0.2328125" />
-        <entry key="app/src/main/res/layout/item_settings.xml" value="0.2328125" />
+        <entry key="app/src/main/res/layout/item_settings.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_settings_normal.xml" value="0.38125" />
+        <entry key="app/src/main/res/layout/item_settings_user.xml" value="0.38125" />
         <entry key="app/src/main/res/layout/item_task.xml" value="0.31365313653136534" />
+        <entry key="app/src/main/res/layout/notification_item.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2796875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_app.xml" value="0.41302083333333334" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2140625" />

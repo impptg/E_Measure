@@ -30,3 +30,7 @@
 3. 搞点颜色瞧瞧
 <img src="markdown/16570363680800.jpg" width = 25%/>
 
+## Day05 && 06
+1. 创建设置界面逻辑及UI
+
+<img src="markdown/16571785690978.jpg" width = 25%/>

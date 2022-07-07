@@ -6,6 +6,6 @@
         android:id="@+id/tv_blank"
         android:text="im a blank"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="20dp"/>
 
 </LinearLayout>

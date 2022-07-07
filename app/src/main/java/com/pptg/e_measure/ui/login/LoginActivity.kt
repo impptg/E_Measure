@@ -18,7 +18,7 @@ import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity(),View.OnClickListener {
-    val context:Context = this
+
     val viewModel by lazy{ ViewModelProvider(this).get(LoginViewModel::class.java)}
     val viewBinding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,7 +69,6 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
                 viewModel.user_id = viewBinding.editText.text.toString()
                 viewModel.user_pswd = viewBinding.editText2.text.toString()
                 viewModel.Login(p0)
-                //Toast.makeText(this,"Login",Toast.LENGTH_SHORT).show()
             }
             R.id.preview ->{
                 if(viewModel.isPreview) {

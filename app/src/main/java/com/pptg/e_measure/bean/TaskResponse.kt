@@ -5,7 +5,7 @@ import com.pptg.e_measure.db.task.TaskEntity
 
 /**
  * TaskResponse: 用于接受服务器最新"数据报表"的响应
- * TaskBeanData: TaskResponse的Data部分，存储数据表的信息
+ * TaskEntity: TaskResponse的Data部分，存储数据表的信息
  */
 
 data class TaskResponse(@SerializedName("msg") val msg:String,
