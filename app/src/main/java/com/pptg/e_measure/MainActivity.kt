@@ -1,9 +1,16 @@
 package com.pptg.e_measure
 
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -12,17 +19,23 @@ import com.pptg.e_measure.databinding.ActivityLoginBinding
 import com.pptg.e_measure.databinding.ActivityMainBinding
 import com.pptg.e_measure.ui.login.LoginViewModel
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListener {
 
     companion object{
         private const val TAG = "MainActivity"
     }
 
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    val model by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
+    lateinit var mMenu: Menu
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        Log.d(TAG, "onCreate: ")
+        setSupportActionBar(binding.tbMain)
+        val navController = Navigation.findNavController(this,R.id.nav_host_fragment_activity_main)
+        navController.addOnDestinationChangedListener(this)
         setNavView()
     }
 
@@ -35,5 +48,65 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_toolbar_menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.btn_refresh ->{
+                Toast.makeText(EMApplication.context,"refresh",Toast.LENGTH_SHORT).show()
+            }
+        }
+        return true
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        mMenu = menu
+        checkOptionMenu()
+        return super.onPrepareOptionsMenu(menu)
+    }
+
+    override fun onDestinationChanged(
+        controller: NavController,
+        destination: NavDestination,
+        arguments: Bundle?
+    ) {
+        Log.d(TAG, "onDestinationChanged: ")
+        when(destination.id){
+            R.id.navigation_home ->{
+                model.optionMenuOn = true
+                checkOptionMenu()
+            }
+            R.id.navigation_dashboard ->{
+                model.optionMenuOn = false
+                Log.d(TAG, "onDestinationChanged: false")
+                checkOptionMenu()
+            }
+            R.id.navigation_settings ->{
+                model.optionMenuOn = false
+                checkOptionMenu()
+            }
+        }
+    }
+
+    fun checkOptionMenu() {
+        if (this::mMenu.isInitialized) {
+            if (model.optionMenuOn) {
+                for (i in 0 until mMenu.size()) {
+                    mMenu.getItem(i).setVisible(true)
+                    mMenu.getItem(i).setEnabled(true)
+                }
+            } else {
+                Log.d(TAG, "checkOptionMenu: false")
+                for (i in 0 until mMenu.size()) {
+                    mMenu.getItem(i).setVisible(false)
+                    mMenu.getItem(i).setEnabled(false)
+                }
+            }
+        }
     }
 }

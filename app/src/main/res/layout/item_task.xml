@@ -1,49 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingRight="@dimen/padding_dp"
-    android:paddingLeft="@dimen/padding_dp"
-    android:paddingTop="@dimen/padding_dp">
-    <androidx.cardview.widget.CardView
+    android:layout_margin="@dimen/padding_dp"
+    android:backgroundTint="@color/orange_700"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ll_item"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/ll_item"
-            android:orientation="vertical"
+        <TextView
+            android:id="@+id/tv_name"
+            android:text="CZ2553"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/item_task_1">
-            <TextView
-                android:id="@+id/tv_name"
-                android:text="CZ2553"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:paddingLeft="@dimen/padding_dp"
-                android:layout_marginTop="10dp"/>
-            <TextView
-                android:id="@+id/tv_disp"
-                android:text="xxx数据表"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="16dp"
-                android:paddingLeft="@dimen/padding_dp"/>
-            <TextView
-                android:id="@+id/tv_index"
-                android:text="001"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:paddingRight="@dimen/padding_dp"
-                android:layout_marginBottom="10dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-</LinearLayout>
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:paddingLeft="@dimen/padding_dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/tv_disp"
+            android:text="xxx数据表"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:paddingLeft="@dimen/padding_dp"/>
+        <TextView
+            android:id="@+id/tv_index"
+            android:text="001"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:paddingRight="@dimen/padding_dp"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
