@@ -38,9 +38,13 @@ class SettingsFragment: Fragment() {
 
         return root
     }
-
+    override fun onStop() {
+        super.onStop()
+        viewModel.itemList.clear()
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
 }
