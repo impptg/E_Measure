@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.bean.Notificaton
 
@@ -17,10 +18,10 @@ class SettingsAdapter(val mList: List<Notificaton>) : RecyclerView.Adapter<Setti
         const val TYPE_BLANK = 3
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tv_settings: TextView = view.findViewById(R.id.tv_settings)
-        val iv_settings: ImageView = view.findViewById(R.id.iv_settings)
-    }
+//    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+//        val tv_settings: TextView = view.findViewById(R.id.tv_settings)
+//        val iv_settings: ImageView = view.findViewById(R.id.iv_settings)
+//    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SettingsBaseHolder {
         when(viewType){
             TYPE_USER->{
@@ -42,8 +43,8 @@ class SettingsAdapter(val mList: List<Notificaton>) : RecyclerView.Adapter<Setti
         val mBean = mList[position]
         when(holder){
             is UserHolder ->{
-                holder.iv_user.setBackgroundResource(R.mipmap.logo)
-                holder.tv_username.text = "铁基智测"
+                holder.iv_user.setBackgroundResource(R.mipmap.ic_app)
+                holder.tv_username.text = "用户名"
             }
             is NormalHolder ->{
                 holder.tv_settings.text = mBean.item
@@ -75,5 +76,5 @@ class SettingsAdapter(val mList: List<Notificaton>) : RecyclerView.Adapter<Setti
 
     }
 }
-
+//密封类
 sealed class SettingsBaseHolder(view: View) : RecyclerView.ViewHolder(view)
