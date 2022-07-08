@@ -1,14 +1,26 @@
 package com.pptg.e_measure.ui.settings
 
+import android.annotation.SuppressLint
+import android.content.res.ColorStateList
+import android.graphics.drawable.Drawable
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.DrawableCompat
+import androidx.core.graphics.drawable.TintAwareDrawable
+import androidx.core.view.TintableBackgroundView
+import androidx.core.widget.TintableImageSourceView
 import androidx.recyclerview.widget.RecyclerView
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.bean.Notificaton
+import com.pptg.e_measure.utils.ViewResSetter
 
 class SettingsAdapter(val mList: List<Notificaton>) : RecyclerView.Adapter<SettingsBaseHolder>() {
 
@@ -43,12 +55,13 @@ class SettingsAdapter(val mList: List<Notificaton>) : RecyclerView.Adapter<Setti
         val mBean = mList[position]
         when(holder){
             is UserHolder ->{
-                holder.iv_user.setBackgroundResource(R.mipmap.ic_app)
-                holder.tv_username.text = "用户名"
+                // holder.iv_user.setBackgroundResource(R.drawable.frog)
+                holder.tv_username.text = "pptg"
             }
             is NormalHolder ->{
                 holder.tv_settings.text = mBean.item
-                holder.iv_settings.setBackgroundResource(R.drawable.ic_launcher_foreground)
+                holder.iv_settings.setBackgroundResource(mBean.imgeId)
+                holder.iv_settings.setBackgroundTintColor(mBean.color)
             }
             is BlankHolder ->{
 
@@ -69,11 +82,67 @@ class SettingsAdapter(val mList: List<Notificaton>) : RecyclerView.Adapter<Setti
 
     class NormalHolder(view: View): SettingsBaseHolder(view){
         var tv_settings:TextView = view.findViewById(R.id.tv_settings)
-        var iv_settings:ImageView = view.findViewById(R.id.iv_settings)
+        var iv_settings:ImageView = view.findViewById(R.id.iv_icon)
     }
 
     class BlankHolder(view: View): SettingsBaseHolder(view){
 
+    }
+
+
+    /**
+     * 拓展 ImageView，使其支持自定义颜色
+     */
+    fun View.setBackgroundTintRes(@ColorRes colorRes: Int) {
+        val colorStateList = ContextCompat.getColorStateList(this.context, colorRes)
+        setBackgroundTintColor(colorStateList)
+    }
+
+    fun View.setBackgroundTintColor(@ColorInt colorInt: Int) {
+        val colorStateList = ColorStateList.valueOf(colorInt)
+        setBackgroundTintColor(colorStateList)
+    }
+
+    fun View.setBackgroundTintColor(colorStateList: ColorStateList?) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.backgroundTintList = colorStateList
+        } else if (this is TintableBackgroundView) {
+            val tintView = this as TintableBackgroundView
+            tintView.supportBackgroundTintList = colorStateList
+        } else {
+            var background: Drawable = this.background ?: return
+            if (background !is TintAwareDrawable) {
+                background = DrawableCompat.wrap(background)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    this.background = background
+                } else {
+                    this.setBackgroundDrawable(background)
+                }
+            }
+            DrawableCompat.setTintList(background, colorStateList)
+        }
+    }
+
+    fun ImageView.setSrcTintRes(@ColorRes colorRes: Int) {
+        val colorStateList = ContextCompat.getColorStateList(this.context, colorRes)
+        setSrcTint(colorStateList)
+    }
+
+    @SuppressLint("RestrictedApi")
+    fun ImageView.setSrcTint(colorStateList: ColorStateList?) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            this.imageTintList = colorStateList
+        } else if (this is TintableImageSourceView) {
+            val tintView = this as TintableImageSourceView
+            tintView.supportImageTintList = colorStateList
+        } else {
+            var drawable: Drawable = this.drawable ?: return
+            if (drawable !is TintAwareDrawable) {
+                drawable = DrawableCompat.wrap(drawable)
+                this.setImageDrawable(drawable)
+            }
+            DrawableCompat.setTintList(drawable, colorStateList)
+        }
     }
 }
 //密封类

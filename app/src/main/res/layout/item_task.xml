@@ -2,10 +2,10 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/padding_dp"
-    android:backgroundTint="@color/orange_700"
     app:cardCornerRadius="20dp"
     app:cardElevation="8dp">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
