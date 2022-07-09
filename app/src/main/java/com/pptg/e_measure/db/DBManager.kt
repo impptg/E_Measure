@@ -5,11 +5,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.db.history.HistoryDao
-import com.pptg.e_measure.db.history.HistoryEntity
+import com.pptg.e_measure.bean.HistoryBean
 import com.pptg.e_measure.db.task.TaskDao
-import com.pptg.e_measure.db.task.TaskEntity
+import com.pptg.e_measure.bean.TaskBean
 
-@Database(entities = [TaskEntity::class,HistoryEntity::class], version = 1)
+@Database(entities = [TaskBean::class, HistoryBean::class], version = 1)
 abstract class DBManager :RoomDatabase(){
     companion object{
         var single = Single.sin

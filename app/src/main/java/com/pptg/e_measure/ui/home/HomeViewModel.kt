@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.pptg.e_measure.EMApplication
-import com.pptg.e_measure.bean.TaskResponse
-import com.pptg.e_measure.db.task.TaskEntity
+import com.pptg.e_measure.network.response.TaskResponse
+import com.pptg.e_measure.bean.TaskBean
 import com.pptg.e_measure.network.ApiNet
 import com.pptg.e_measure.network.ServiceCreator
 import retrofit2.Call
@@ -18,7 +18,7 @@ class HomeViewModel():ViewModel() {
         private const val TAG = "HomeViewModel"
     }
 
-    var mList:List<TaskEntity> = emptyList()
+    var mList:List<TaskBean> = emptyList()
     var adapter: TaskAdapter = TaskAdapter(mList)
 
     init {
@@ -26,7 +26,7 @@ class HomeViewModel():ViewModel() {
         adapter.mList = mList
     }
 
-    val mLiveList = MutableLiveData<List<TaskEntity>>()
+    val mLiveList = MutableLiveData<List<TaskBean>>()
 
     fun refresh(){
         Task()

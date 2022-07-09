@@ -8,10 +8,15 @@ import com.pptg.e_measure.db.DBManager
 class EMApplication : Application() {
 
     companion object {
+        // 是否Mock
+        const val ISMOCK = true
+        // 正式地址
+        const val HOST_URL = "http://47.95.223.213/myadmin/"
+        // MOCK地址
+        const val MOCK_URL = "https://mock.apifox.cn/m1/1227265-0-default/myadmin/"
         // 全局 context
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
-
         // 全局 Dao
         lateinit var dbManager: DBManager
     }

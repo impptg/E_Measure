@@ -10,9 +10,9 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
-import com.pptg.e_measure.db.task.TaskEntity
+import com.pptg.e_measure.bean.TaskBean
 
-class TaskAdapter(var mList:List<TaskEntity>):RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
+class TaskAdapter(var mList:List<TaskBean>):RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val ll_item: LinearLayout = view.findViewById(R.id.ll_item)
@@ -28,7 +28,7 @@ class TaskAdapter(var mList:List<TaskEntity>):RecyclerView.Adapter<TaskAdapter.V
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val mBean: TaskEntity = mList[position]
+        val mBean: TaskBean = mList[position]
         when(position%3) {
             0 -> holder.cv_item.setCardBackgroundColor(EMApplication.context.getResources()
                 .getColor(R.color.orange_700,null))

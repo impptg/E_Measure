@@ -1,11 +1,11 @@
-package com.pptg.e_measure.db.history
+package com.pptg.e_measure.bean
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "History")
-class HistoryEntity {
+class HistoryBean {
     @PrimaryKey(autoGenerate = false)
     var historyID:Int = 0
 

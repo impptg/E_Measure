@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.MainActivity
-import com.pptg.e_measure.bean.LoginResponse
+import com.pptg.e_measure.network.response.LoginResponse
 import com.pptg.e_measure.network.ApiNet
 import com.pptg.e_measure.network.ServiceCreator
 import retrofit2.Callback
@@ -28,8 +28,8 @@ class LoginViewModel : ViewModel(){
         appService.Login(user_id,user_pswd).enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 val body = response.body() as LoginResponse
-                if (body.data.login.equals("true")){
-                    Toast.makeText(EMApplication.context, body.data.id, Toast.LENGTH_SHORT).show()
+                if (body.data.status.equals("true")){
+                    Toast.makeText(EMApplication.context, body.data.info, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, body.toString())
                     val context = view.context
                     var intent = Intent(context,MainActivity::class.java)

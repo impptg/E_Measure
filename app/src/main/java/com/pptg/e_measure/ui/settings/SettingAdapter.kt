@@ -17,12 +17,10 @@ import androidx.core.graphics.drawable.TintAwareDrawable
 import androidx.core.view.TintableBackgroundView
 import androidx.core.widget.TintableImageSourceView
 import androidx.recyclerview.widget.RecyclerView
-import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
-import com.pptg.e_measure.bean.Notificaton
-import com.pptg.e_measure.utils.ViewResSetter
+import com.pptg.e_measure.bean.SettingsBean
 
-class SettingsAdapter(val mList: List<Notificaton>) : RecyclerView.Adapter<SettingsBaseHolder>() {
+class SettingsAdapter(val mList: List<SettingsBean>) : RecyclerView.Adapter<SettingsBaseHolder>() {
 
     companion object {
         const val TYPE_USER = 1

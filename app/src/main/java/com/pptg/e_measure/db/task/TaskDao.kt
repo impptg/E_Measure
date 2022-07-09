@@ -2,22 +2,22 @@ package com.pptg.e_measure.db.task
 
 import androidx.room.*
 import com.pptg.e_measure.db.base.BaseDao
-import com.pptg.e_measure.db.task.TaskEntity
+import com.pptg.e_measure.bean.TaskBean
 
 @Dao
-interface TaskDao:BaseDao<TaskEntity> {
+interface TaskDao:BaseDao<TaskBean> {
     @Query("select * from Task")
-    fun queryTask(): List<TaskEntity>
+    fun queryTask(): List<TaskBean>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertTask(element: TaskEntity)
+    fun insertTask(element: TaskBean)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertTask(mList: List<TaskEntity>)
+    fun insertTask(mList: List<TaskBean>)
 
     @Delete
-    fun deleteTask(element: TaskEntity)
+    fun deleteTask(element: TaskBean)
 
     @Delete
-    fun deleteTask(mList: List<TaskEntity>)
+    fun deleteTask(mList: List<TaskBean>)
 }
