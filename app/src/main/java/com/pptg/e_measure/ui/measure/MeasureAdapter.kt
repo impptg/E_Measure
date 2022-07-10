@@ -13,7 +13,6 @@ class MeasureAdapter(var mList:List<MeasureBean>):
     RecyclerView.Adapter<MeasureAdapter.ViewHolder>() {
 
     inner class ViewHolder(view:View) : RecyclerView.ViewHolder(view) {
-        var ll_item_measure: LinearLayout = view.findViewById(R.id.ll_item_measure)
         var tv_item_measure_attr: TextView = view.findViewById(R.id.tv_item_measure_attr)
         var tv_item_measure_value: TextView = view.findViewById(R.id.tv_item_measure_value)
         var tv_item_measure_upper: TextView = view.findViewById(R.id.tv_item_measure_upper)

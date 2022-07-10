@@ -18,7 +18,6 @@ class HomeAdapter(var fragment: HomeFragment, var mList:List<TaskBean>):
     RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        val ll_item: LinearLayout = view.findViewById(R.id.ll_item)
         val tv_name:TextView = view.findViewById(R.id.tv_name)
         val tv_disp:TextView = view.findViewById(R.id.tv_disp)
         val tv_index:TextView = view.findViewById(R.id.tv_index)

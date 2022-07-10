@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ll_item_measure"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:backgroundTint="@color/gray_100"
+    android:layout_marginRight="@dimen/padding_dp"
+    android:layout_marginLeft="@dimen/padding_dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +45,8 @@
                 android:gravity="center">
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_arrow_drop_up_24"/>
                 <TextView
                     android:id="@+id/tv_item_measure_upper"
                     android:layout_width="wrap_content"
@@ -52,7 +62,8 @@
                 android:gravity="center">
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_arrow_drop_down_24"/>
                 <TextView
                     android:id="@+id/tv_item_measure_lower"
                     android:layout_width="wrap_content"
@@ -82,4 +93,4 @@
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="@color/transparent"/>
-</LinearLayout>
+</androidx.cardview.widget.CardView>
