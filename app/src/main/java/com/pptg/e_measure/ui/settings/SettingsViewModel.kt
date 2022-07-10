@@ -5,7 +5,6 @@ import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.bean.SettingsBean
 
-
 class SettingsViewModel : ViewModel() {
 
     companion object{

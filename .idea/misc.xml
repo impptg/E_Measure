@@ -34,9 +34,9 @@
         <entry key="app/src/main/res/layout/item_blank.xml" value="0.2328125" />
         <entry key="app/src/main/res/layout/item_settings.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_settings_blank.xml" value="0.396875" />
-        <entry key="app/src/main/res/layout/item_settings_normal.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/item_settings_normal.xml" value="0.24528301886792453" />
         <entry key="app/src/main/res/layout/item_settings_user.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/item_task.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_task.xml" value="0.35234814916773455" />
         <entry key="app/src/main/res/layout/notification_item.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2796875" />
         <entry key="app/src/main/res/menu/main_toolbar_menu.xml" value="0.1" />

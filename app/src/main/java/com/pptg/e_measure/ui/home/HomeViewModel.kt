@@ -19,18 +19,15 @@ class HomeViewModel():ViewModel() {
     }
 
     var mList:List<TaskBean> = emptyList()
-    var adapter: TaskAdapter = TaskAdapter(mList)
 
     init {
         mList = EMApplication.dbManager.getTaskDao().queryTask()
-        adapter.mList = mList
     }
 
     val mLiveList = MutableLiveData<List<TaskBean>>()
 
     fun refresh(){
         Task()
-        // mLiveList.value = mList
     }
 
     fun Task(){
@@ -38,11 +35,11 @@ class HomeViewModel():ViewModel() {
         appService.Task().enqueue(object : Callback<TaskResponse> {
             override fun onResponse(call: Call<TaskResponse>, response: Response<TaskResponse>) {
                 val body = response.body() as TaskResponse
-                adapter.mList = body.data
                 mLiveList.value = body.data
+                Log.d(TAG, "onResponse: "+mList)
+                mList = body.data
+                Log.d(TAG, "onResponse: "+mList)
                 // EMApplication.dbManager.getTaskDao().insertTask(adapter.mList)
-                adapter.notifyDataSetChanged()
-                mList = EMApplication.dbManager.getTaskDao().queryTask()
                 Log.d(TAG, body.toString())
             }
 

@@ -21,6 +21,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
+    private lateinit var adapter: HomeAdapter
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -37,15 +38,20 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        adapter = HomeAdapter(this,viewModel.mList)
+
 
         // viewModel.Task()
         val layoutManager = LinearLayoutManager(EMApplication.context)
         binding.rvHome.layoutManager = layoutManager
-        binding.rvHome.adapter = viewModel.adapter
+        binding.rvHome.adapter = adapter
 
         viewModel.mLiveList.observe(viewLifecycleOwner, Observer { mLiveList ->
             if(mLiveList != null){
                 Toast.makeText(EMApplication.context,mLiveList.toString(),Toast.LENGTH_SHORT).show()
+                viewModel.mList = mLiveList
+                adapter.mList = mLiveList
+                adapter.notifyDataSetChanged()
             }else{
 
             }
@@ -56,19 +62,6 @@ class HomeFragment : Fragment() {
             viewModel.refresh()
         }
         return root
-    }
-
-    fun stopp(){
-        thread {
-            Thread.sleep(2000)
-            activity?.runOnUiThread{
-                try {
-                    binding.slHome.isRefreshing = false
-                }catch (e:Exception){
-                    e.printStackTrace()
-                }
-            }
-        }
     }
 
     override fun onDestroyView() {

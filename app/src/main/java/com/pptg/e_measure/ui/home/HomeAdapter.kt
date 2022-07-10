@@ -1,5 +1,6 @@
 package com.pptg.e_measure.ui.home
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.bean.TaskBean
+import com.pptg.e_measure.ui.measure.MeasureActivity
 
-class TaskAdapter(var mList:List<TaskBean>):RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
+class HomeAdapter(var fragment: HomeFragment, var mList:List<TaskBean>):
+    RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val ll_item: LinearLayout = view.findViewById(R.id.ll_item)
@@ -24,7 +27,15 @@ class TaskAdapter(var mList:List<TaskBean>):RecyclerView.Adapter<TaskAdapter.Vie
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_task, parent, false)
-        return ViewHolder(view)
+        val holder = ViewHolder(view)
+        holder.itemView.setOnClickListener {
+            val mBean = mList[holder.adapterPosition]
+            val intent = Intent(parent.context,MeasureActivity::class.java).apply {
+                putExtra("taskID",mBean.taskID)
+            }
+            fragment.startActivity(intent)
+        }
+        return holder
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
