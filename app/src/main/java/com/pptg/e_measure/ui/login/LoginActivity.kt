@@ -68,7 +68,9 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
                 //TODO 登陆相关
                 viewModel.user_id = viewBinding.editText.text.toString()
                 viewModel.user_pswd = viewBinding.editText2.text.toString()
-                viewModel.Login(p0)
+                //使用SharedPreferences来存储user_id
+                val editor = getSharedPreferences("user_name",Context.MODE_PRIVATE).edit()
+                viewModel.Login(p0,editor)
             }
             R.id.preview ->{
                 if(viewModel.isPreview) {

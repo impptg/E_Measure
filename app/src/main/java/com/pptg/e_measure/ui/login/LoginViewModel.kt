@@ -1,6 +1,7 @@
 package com.pptg.e_measure.ui.login
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.util.Log
 import android.view.View
 
@@ -23,7 +24,8 @@ class LoginViewModel : ViewModel(){
     var user_pswd = ""
     var isPreview = false
 
-    fun Login(view: View){
+
+    fun Login(view: View,editor: SharedPreferences.Editor){
         val appService = ServiceCreator.create<ApiNet>()
         appService.Login(user_id,user_pswd).enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
@@ -31,6 +33,9 @@ class LoginViewModel : ViewModel(){
                 if (body.data.status.equals("true")){
                     Toast.makeText(EMApplication.context, body.data.info, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, body.toString())
+                    //完成user_name的存储
+                    editor.putString("user_id",user_id)
+                    editor.apply()
                     val context = view.context
                     var intent = Intent(context,MainActivity::class.java)
                     context.startActivity(intent)
@@ -45,4 +50,6 @@ class LoginViewModel : ViewModel(){
             }
         })
     }
+
+
 }
