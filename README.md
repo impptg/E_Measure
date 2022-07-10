@@ -58,7 +58,9 @@
 2. 完成数据报表详细内容Demo
 3. 配置正式环境的数据报表(数据库没接上，只能点未刷新前2个）
 
-<img src="markdown/16574671823799.jpg" width = 25%/><img src="markdown/16574672204375.jpg" width = 25%/>
+<img src="markdown/16574687878244.jpg" width = 25%/><img src="markdown/16574672204375.jpg" width = 25%/>
+
+
 
 ## 二、项目结构
 1. bean：各种基础的bean
