@@ -19,6 +19,9 @@ class EMApplication : Application() {
         lateinit var context: Context
         // 全局 Dao
         lateinit var dbManager: DBManager
+
+        // intent信息
+        const val TASK_ID = "taskID"
     }
 
     override fun onCreate() {

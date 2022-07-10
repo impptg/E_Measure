@@ -30,8 +30,8 @@ class HomeAdapter(var fragment: HomeFragment, var mList:List<TaskBean>):
         val holder = ViewHolder(view)
         holder.itemView.setOnClickListener {
             val mBean = mList[holder.adapterPosition]
-            val intent = Intent(parent.context,MeasureActivity::class.java).apply {
-                putExtra("taskID",mBean.taskID)
+            val intent = Intent(fragment.context,MeasureActivity::class.java).apply {
+                putExtra(EMApplication.TASK_ID,mBean.taskID.toString())
             }
             fragment.startActivity(intent)
         }

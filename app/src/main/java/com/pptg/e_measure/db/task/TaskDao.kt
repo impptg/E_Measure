@@ -9,6 +9,9 @@ interface TaskDao:BaseDao<TaskBean> {
     @Query("select * from Task")
     fun queryTask(): List<TaskBean>
 
+    @Query("select * from Task WHERE TaskID =:ID")
+    fun queryTask(ID:String): TaskBean
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertTask(element: TaskBean)
 
