@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/border_bg.xml" value="0.1" />
         <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/activity_change_pwd.xml" value="0.4239583333333333" />
         <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.32760416666666664" />
@@ -25,10 +24,11 @@
         <entry key="app/src/main/res/drawable/item_task_1.xml" value="0.23385416666666667" />
         <entry key="app/src/main/res/drawable/item_task_2.xml" value="0.3921875" />
         <entry key="app/src/main/res/drawable/item_task_3.xml" value="0.3921875" />
+        <entry key="app/src/main/res/layout/activity_change_pwd.xml" value="0.2390625" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18024691358024691" />
-        <entry key="app/src/main/res/layout/activity_measure.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_measure.xml" value="0.2527569854050446" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.1" />
