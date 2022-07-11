@@ -20,11 +20,13 @@ class ChangePswdViewModel: ViewModel() {
     var older_pswd = ""
     var new_pswd = ""
     var new_pswd1 = ""
+    var user_name = ""
 
     fun changePswd(view: View,preferences: SharedPreferences) {
         var user_id  = preferences.getString("user_id","")
         if (new_pswd.equals(new_pswd1) && user_id != null && older_pswd != null && new_pswd != null){
             Log.d(TAG,"进入了第一层判断")
+
             val appServcie = ServiceCreator.create<ApiNet>()
             Log.d(TAG," "+user_id)
             Log.d(TAG,older_pswd)
@@ -51,6 +53,7 @@ class ChangePswdViewModel: ViewModel() {
 
             })
         }else{
+            Toast.makeText(EMApplication.context,"两次输入的密码不一致",Toast.LENGTH_LONG).show()
             Log.d(TAG,"没有进入第一层判断")
         }
 

@@ -9,7 +9,7 @@ class EMApplication : Application() {
 
     companion object {
         // 是否Mock
-        const val ISMOCK = true
+        const val ISMOCK = false
         // 正式地址
         const val HOST_URL = "http://47.95.223.213/myadmin/"
         // MOCK地址
