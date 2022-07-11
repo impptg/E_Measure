@@ -8,11 +8,9 @@
     android:orientation="vertical"
     android:clickable="true"
     android:focusable="true"
-    android:backgroundTint="@color/gray_100"
-    android:layout_marginRight="@dimen/padding_dp"
-    android:layout_marginLeft="@dimen/padding_dp"
-    android:layout_marginTop="2dp"
-    android:layout_marginBottom="2dp"
+    android:backgroundTint="@color/lightgrey"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="3dp">
     <LinearLayout
@@ -21,7 +19,7 @@
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
@@ -29,6 +27,7 @@
                 android:id="@+id/tv_item_measure_attr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_s"
                 android:gravity="center"
                 android:text="顶铁" />
 
@@ -89,8 +88,4 @@
                 android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="@color/transparent"/>
 </androidx.cardview.widget.CardView>

@@ -27,7 +27,7 @@
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18024691358024691" />
-        <entry key="app/src/main/res/layout/activity_measure.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/activity_measure.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.1" />
