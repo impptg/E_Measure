@@ -39,7 +39,7 @@ class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
         viewBinding.olderPswd.setText(viewmodel.older_pswd)
         viewBinding.newPswd.setText(viewmodel.new_pswd)
         viewBinding.newPswd1.setText(viewmodel.new_pswd1)
-
+        viewBinding.textView9.setText(viewmodel.user_name)
     }
     @CallSuper
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {

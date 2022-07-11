@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- 设置边框的宽度和颜色 -->
-    <stroke android:width="3dp" android:color="@color/orange_400"/>
+    <stroke android:width="3dp" android:color="@color/blue_500"/>
     <!-- 设置框内的填充色  -->
     <solid android:color="@android:color/transparent"/>
     <!-- 设置圆角 -->
