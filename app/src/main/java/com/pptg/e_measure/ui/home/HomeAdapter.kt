@@ -48,9 +48,12 @@ class HomeAdapter(var fragment: HomeFragment, var mList:List<TaskBean>):
                 .getColor(R.color.green_500,null))
         }
 
-        holder.tv_name.text = mBean.name
-        holder.tv_disp.text = mBean.disp
-        holder.tv_index.text = mBean.taskID.toString()
+
+        holder.apply {
+            tv_name.text = mBean.name
+            tv_disp.text = mBean.disp
+            tv_index.text = mBean.taskID.toString()
+        }
     }
 
     override fun getItemCount(): Int {

@@ -26,6 +26,8 @@ class MeasureActivity : AppCompatActivity() {
             model.DecodeTask(TaskID)
         }
 
+        binding.tbMeasure.title = "数据测量"
+
         adapter = MeasureAdapter(model.mList)
         val layoutManager = LinearLayoutManager(EMApplication.context)
         binding.rvMeasure.layoutManager = layoutManager

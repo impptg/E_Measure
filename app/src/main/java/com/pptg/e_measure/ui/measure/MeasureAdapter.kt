@@ -26,10 +26,12 @@ class MeasureAdapter(var mList:List<MeasureBean>):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val mBean: MeasureBean = mList[position]
-        holder.tv_item_measure_attr.text = mBean.attr
-        holder.tv_item_measure_upper.text = mBean.lim_r
-        holder.tv_item_measure_lower.text = mBean.lim_l
-        holder.tv_item_measure_value.text = mBean.value
+        holder.apply {
+            tv_item_measure_attr.text = mBean.attr
+            tv_item_measure_upper.text = mBean.lim_r
+            tv_item_measure_lower.text = mBean.lim_l
+            tv_item_measure_value.text = mBean.value
+        }
     }
 
     override fun getItemCount(): Int {
