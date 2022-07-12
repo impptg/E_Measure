@@ -2,6 +2,7 @@ package com.pptg.e_measure
 
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -109,4 +110,27 @@ class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListe
             }
         }
     }
+
+//    override fun onKeyDown(keyCode: Int, ev: KeyEvent): Boolean {
+//        if (keyCode == KeyEvent.KEYCODE_BACK)
+//            Toast.makeText(EMApplication.context, "NULL", Toast.LENGTH_SHORT).show()
+////            System.exit(0)
+////            exitBy2Click() //调用双击退出函数
+//        return false
+//    }
+//    override fun onKeyDown(keyCode: Int, ev: KeyEvent): Boolean {
+//        var exitTime = 0
+//        if (keyCode == KeyEvent.KEYCODE_BACK){
+//            // 判断两次点击间隔时间
+//            if((System.currentTimeMillis()-exitTime)>2000){
+//                Toast.makeText(EMApplication.context,"再次返回程序退出！",Toast.LENGTH_SHORT).show();
+//                exitTime = System.currentTimeMillis().toInt(); // 设置第一次点击时间
+//            }else{
+//                //finish();
+//                System.exit(0);
+//            }
+//            return true;
+//        }
+//        return super.onKeyDown(keyCode,ev);
+//    }
 }
