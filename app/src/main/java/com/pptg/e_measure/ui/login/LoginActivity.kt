@@ -13,6 +13,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.CallSuper
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.ActivityLoginBinding
@@ -28,6 +29,10 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
         viewBinding.preview.setOnClickListener(this)
         viewBinding.editText.setText(viewModel.user_id)
         viewBinding.editText2.setText(viewModel.user_pswd)
+
+        viewModel.isFinished.observe(this, {
+            if(it) finish()
+        })
     }
 
     @CallSuper
