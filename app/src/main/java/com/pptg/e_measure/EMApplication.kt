@@ -9,7 +9,7 @@ class EMApplication : Application() {
 
     companion object {
         // 是否Mock
-        const val ISMOCK = false
+        const val ISMOCK = true
         // 正式地址
         const val HOST_URL = "http://47.95.223.213/myadmin/"
         // MOCK地址
@@ -19,7 +19,6 @@ class EMApplication : Application() {
         lateinit var context: Context
         // 全局 Dao
         lateinit var dbManager: DBManager
-
         // intent信息
         const val TASK_ID = "taskID"
     }

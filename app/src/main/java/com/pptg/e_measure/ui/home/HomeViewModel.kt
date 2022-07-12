@@ -39,7 +39,7 @@ class HomeViewModel():ViewModel() {
                 Log.d(TAG, "onResponse: "+mList)
                 mList = body.data
                 Log.d(TAG, "onResponse: "+mList)
-                // EMApplication.dbManager.getTaskDao().insertTask(adapter.mList)
+                EMApplication.dbManager.getTaskDao().insertTask(mList)
                 Log.d(TAG, body.toString())
             }
 
