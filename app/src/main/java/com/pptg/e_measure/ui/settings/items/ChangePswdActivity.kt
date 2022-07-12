@@ -27,8 +27,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import kotlin.math.log
-//test测试一下
-//test02
+
 class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
 
     val viewmodel by lazy { ViewModelProvider(this).get(ChangePswdViewModel::class.java) }
