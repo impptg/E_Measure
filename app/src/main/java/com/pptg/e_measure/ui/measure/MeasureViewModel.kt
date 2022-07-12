@@ -23,7 +23,7 @@ class MeasureViewModel():ViewModel() {
 
     fun TaskToMeasure(mTaskBean: TaskBean):List<MeasureBean>{
         var mMeasureBeanList:MutableList<MeasureBean> = ArrayList()
-        Log.d(TAG, mTaskBean.attr.toString())
+        Log.d(TAG, mTaskBean.attr)
         val attr = mTaskBean.attr.split(",")
         val lim_l = mTaskBean.lim_l.split(",")
         val lim_r = mTaskBean.lim_r.split(",")

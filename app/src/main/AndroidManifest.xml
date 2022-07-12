@@ -25,13 +25,15 @@
         android:theme="@style/Theme.E_Measure"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.scan.ScanActivity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".ui.measure.MeasureActivity"
             android:exported="true" />
-
         <activity
             android:name=".ui.settings.items.ChangePswdActivity"
             android:exported="true" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -42,6 +44,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

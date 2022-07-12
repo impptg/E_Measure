@@ -6,6 +6,8 @@ import android.util.Log
 import android.view.View
 
 import android.widget.Toast
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.MainActivity
@@ -20,9 +22,13 @@ class LoginViewModel : ViewModel(){
     companion object {
         private const val TAG = "LoginViewModel"
     }
+
+    var isFinished : MutableLiveData<Boolean> = MutableLiveData(false)
     var user_id = ""
     var user_pswd = ""
     var isPreview = false
+
+
 
 
     fun Login(view: View,editor: SharedPreferences.Editor){
@@ -39,6 +45,7 @@ class LoginViewModel : ViewModel(){
                     val context = view.context
                     var intent = Intent(context,MainActivity::class.java)
                     context.startActivity(intent)
+                    isFinished.value = true
                 }else{
                     Toast.makeText(EMApplication.context, "账号或密码错误", Toast.LENGTH_SHORT).show()
                     Log.d(TAG, body.toString())

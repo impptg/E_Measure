@@ -30,16 +30,16 @@ import kotlin.math.log
 
 class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
 
-    val viewmodel by lazy { ViewModelProvider(this).get(ChangePswdViewModel::class.java) }
-    val viewBinding by lazy { ActivityChangePwdBinding.inflate(layoutInflater) }
+    val model by lazy { ViewModelProvider(this).get(ChangePswdViewModel::class.java) }
+    val binding by lazy { ActivityChangePwdBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(viewBinding.root)
-        viewBinding.changePswdButton.setOnClickListener(this)
-        viewBinding.olderPswd.setText(viewmodel.older_pswd)
-        viewBinding.newPswd.setText(viewmodel.new_pswd)
-        viewBinding.newPswd1.setText(viewmodel.new_pswd1)
-        viewBinding.textView9.setText(viewmodel.user_name)
+        setContentView(binding.root)
+        binding.changePswdButton.setOnClickListener(this)
+        binding.olderPswd.setText(model.older_pswd)
+        binding.newPswd.setText(model.new_pswd)
+        binding.newPswd1.setText(model.new_pswd1)
+        binding.textView9.setText(model.user_name)
     }
     @CallSuper
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
@@ -76,11 +76,11 @@ class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
     override fun onClick(p0: View?) {
         when (p0?.id) {
             R.id.changePswd_button -> {
-                viewmodel.older_pswd = viewBinding.olderPswd.text.toString()
-                viewmodel.new_pswd = viewBinding.newPswd.text.toString()
-                viewmodel.new_pswd1 = viewBinding.newPswd1.text.toString()
+                model.older_pswd = binding.olderPswd.text.toString()
+                model.new_pswd = binding.newPswd.text.toString()
+                model.new_pswd1 = binding.newPswd1.text.toString()
                 val prefs = getSharedPreferences("user_name",Context.MODE_PRIVATE)
-                viewmodel.changePswd(p0,prefs)
+                model.changePswd(p0,prefs)
             }
         }
     }

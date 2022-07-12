@@ -7,13 +7,17 @@ import android.os.IBinder
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Log
+import android.view.KeyEvent
+import android.view.KeyEvent.KEYCODE_BACK
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.CallSuper
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
+import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.ActivityLoginBinding
 
@@ -28,6 +32,10 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
         viewBinding.preview.setOnClickListener(this)
         viewBinding.editText.setText(viewModel.user_id)
         viewBinding.editText2.setText(viewModel.user_pswd)
+
+        viewModel.isFinished.observe(this, {
+            if(it) finish()
+        })
     }
 
     @CallSuper
@@ -36,7 +44,8 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
             //获得当前得到的焦点view,一般情况下就是EditText
             val  view = currentFocus
             if (isShouldHideInput(view,ev)){
-                hideSoftInput(view!!.windowToken)
+                hideSoftInput(view!!.windowToken) //隐藏软键盘
+                view.clearFocus()
             }
         }
         return super.dispatchTouchEvent(ev)
@@ -55,12 +64,22 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
         return false
     }
 
+
     fun hideSoftInput(token: IBinder?) {
         if (token != null) {
             val im: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             im.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS)
         }
     }
+
+//    override fun onKeyDown(keyCode: Int, ev: KeyEvent): Boolean {
+//        if (keyCode == KeyEvent.KEYCODE_BACK)
+//            Toast.makeText(EMApplication.context, "账号或密码错误", Toast.LENGTH_SHORT).show()
+////            System.exit(0)
+////            exitBy2Click() //调用双击退出函数
+//        return false
+//    }
+
 
     override fun onClick(p0: View?) {
         when(p0?.id){
@@ -89,6 +108,7 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
                     viewBinding.editText2.setSelection(viewBinding.editText2.text.length)
                 }
             }
+
             null -> Toast.makeText(this,"NULL",Toast.LENGTH_SHORT).show()
         }
     }

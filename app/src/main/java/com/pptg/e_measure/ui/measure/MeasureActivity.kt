@@ -1,5 +1,6 @@
 package com.pptg.e_measure.ui.measure
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toolbar
@@ -11,6 +12,7 @@ import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.ActivityLoginBinding
 import com.pptg.e_measure.databinding.ActivityMeasureBinding
 import com.pptg.e_measure.ui.login.LoginViewModel
+import com.pptg.e_measure.ui.scan.ScanActivity
 
 class MeasureActivity : AppCompatActivity() {
 
@@ -33,6 +35,11 @@ class MeasureActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(EMApplication.context)
         binding.rvMeasure.layoutManager = layoutManager
         binding.rvMeasure.adapter = adapter
+
+        binding.fabMeasure.setOnClickListener{
+            val intent = Intent(this,ScanActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
