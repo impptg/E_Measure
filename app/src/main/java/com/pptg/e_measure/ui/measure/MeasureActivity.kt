@@ -2,6 +2,7 @@ package com.pptg.e_measure.ui.measure
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,4 +34,6 @@ class MeasureActivity : AppCompatActivity() {
         binding.rvMeasure.layoutManager = layoutManager
         binding.rvMeasure.adapter = adapter
     }
+
+
 }
