@@ -3,6 +3,8 @@ package com.pptg.e_measure
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
+import android.view.KeyEvent
+import android.widget.Toast
 import com.pptg.e_measure.db.DBManager
 
 class EMApplication : Application() {
@@ -26,4 +28,5 @@ class EMApplication : Application() {
         context = applicationContext
         dbManager = DBManager.single
     }
+
 }
