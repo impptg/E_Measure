@@ -60,7 +60,10 @@
 
 <img src="markdown/16574687878244.jpg" width = 25%/><img src="markdown/16574672204375.jpg" width = 25%/>
 
-
+### 22.7.11
+1.进一步完善了修改密码功能
+2.修改密码界面进行了美化
+<img src="markdown/Screenshot_20220712_234245.png" width = 25%>
 
 ### 22.7.12
 

@@ -1,45 +1,34 @@
-package com.pptg.e_measure.ui.settings.items
+package com.pptg.e_measure.ui.search
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import com.pptg.e_measure.R
-import android.content.Context
 import android.os.IBinder
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pptg.e_measure.EMApplication
-import com.pptg.e_measure.databinding.ActivityChangePwdBinding
-import com.pptg.e_measure.databinding.ActivityLoginBinding
-import com.pptg.e_measure.network.ApiNet
-import com.pptg.e_measure.network.ServiceCreator
-import com.pptg.e_measure.network.response.ChangePswdResponse
-import com.pptg.e_measure.network.response.LoginResponse
-import com.pptg.e_measure.ui.login.LoginViewModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import kotlin.math.log
+import com.pptg.e_measure.R
+import com.pptg.e_measure.databinding.ActivitySearchBinding
+import com.pptg.e_measure.ui.home.HomeAdapter
 
-class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
-
-    val model by lazy { ViewModelProvider(this).get(ChangePswdViewModel::class.java) }
-    val binding by lazy { ActivityChangePwdBinding.inflate(layoutInflater) }
+class SearchActivity : AppCompatActivity() ,View.OnClickListener{
+    val model by lazy { ViewModelProvider(this).get(SearchViewModel::class.java) }
+    val binding by lazy { ActivitySearchBinding.inflate(layoutInflater) }
+    private lateinit var adapter: SearchAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        binding.changePswdButton.setOnClickListener(this)
-        binding.olderPswd.setText(model.older_pswd)
-        binding.newPswd.setText(model.new_pswd)
-        binding.newPswd1.setText(model.new_pswd1)
-        binding.textView9.setText(model.user_name)
+        binding.searchBtn.setOnClickListener(this)
+        binding.searchContent.setText(model.searchContent)
+        val layoutManager = LinearLayoutManager(this)
+        adapter = SearchAdapter(this,model.searchList)
+        binding.searchResult.adapter = adapter
+        binding.searchResult.layoutManager = layoutManager
     }
     @CallSuper
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
@@ -75,18 +64,11 @@ class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
 
     override fun onClick(p0: View?) {
         when (p0?.id) {
-            R.id.changePswd_button -> {
-                model.older_pswd = binding.olderPswd.text.toString()
-                model.new_pswd = binding.newPswd.text.toString()
-                model.new_pswd1 = binding.newPswd1.text.toString()
-                val prefs = getSharedPreferences("user_name",Context.MODE_PRIVATE)
-                //model.changePswd(p0,prefs)
-                model.changePswd(prefs)
+            R.id.search_btn -> {
+                model.searchContent = binding.searchContent.text.toString()
+                model.search()
             }
         }
     }
 
-    companion object {
-        private const val TAG = "ChangePswdActivity"
-    }
 }
