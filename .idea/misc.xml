@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/activity_change_pwd.xml" value="0.4239583333333333" />
+=======
+        <entry key="..\:/AndroidStudioProjects/E_Measure/app/src/main/res/layout/activity_login.xml" value="0.14427083333333332" />
+>>>>>>> origin/sjm
         <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/74701/Desktop/E_Measure/app/src/main/res/layout/activity_measure.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.3229166666666667" />
         <entry key="app/src/main/res/drawable/btn_preview.xml" value="0.41302083333333334" />
@@ -29,7 +32,8 @@
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18024691358024691" />
-        <entry key="app/src/main/res/layout/activity_measure.xml" value="0.2527569854050446" />
+        <entry key="app/src/main/res/layout/activity_measure.xml" value="0.35692282725876623" />
+        <entry key="app/src/main/res/layout/activity_scan.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.1" />
@@ -37,6 +41,7 @@
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/item_blank.xml" value="0.2328125" />
         <entry key="app/src/main/res/layout/item_measure.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/item_scan.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_settings.xml" value="0.335" />
         <entry key="app/src/main/res/layout/item_settings_blank.xml" value="0.396875" />
         <entry key="app/src/main/res/layout/item_settings_normal.xml" value="0.24528301886792453" />

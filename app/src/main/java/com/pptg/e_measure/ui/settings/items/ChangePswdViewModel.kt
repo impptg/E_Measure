@@ -24,7 +24,7 @@ class ChangePswdViewModel: ViewModel() {
     var new_pswd1 = ""
     var user_name = ""
 
-    fun changePswd(view: View,preferences: SharedPreferences) {
+    fun changePswd(preferences: SharedPreferences) {
         var user_id  = preferences.getString("user_id","")
         if (new_pswd.equals(new_pswd1) && user_id != null && older_pswd != null && new_pswd != null){
             Log.d(TAG,"进入了第一层判断")

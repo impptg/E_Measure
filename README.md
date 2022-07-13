@@ -60,6 +60,21 @@
 
 <img src="markdown/16574687878244.jpg" width = 25%/><img src="markdown/16574672204375.jpg" width = 25%/>
 
+### 22.7.11
+1.进一步完善了修改密码功能
+2.修改密码界面进行了美化
+<img src="markdown/Screenshot_20220712_234245.png" width = 25%>
+
+### 22.7.12
+
+1. 修复登录界面输入框常亮bug
+
+2. 修复主界面返回登录界面bug
+
+3. 新增蓝牙扫描功能及UI
+
+
+<img src="markdown/39921657614784.jpg" width = 25%/>
 
 
 ## 二、项目结构

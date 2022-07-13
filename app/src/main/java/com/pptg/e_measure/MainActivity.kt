@@ -1,5 +1,6 @@
 package com.pptg.e_measure
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
@@ -19,6 +20,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.pptg.e_measure.databinding.ActivityLoginBinding
 import com.pptg.e_measure.databinding.ActivityMainBinding
 import com.pptg.e_measure.ui.login.LoginViewModel
+import com.pptg.e_measure.ui.search.SearchActivity
 
 class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListener {
 
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListe
         val navController = Navigation.findNavController(this,R.id.nav_host_fragment_activity_main)
         navController.addOnDestinationChangedListener(this)
         setNavView()
+        setSearch()
     }
 
     fun setNavView(){
@@ -49,6 +52,13 @@ class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListe
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
+    }
+
+    fun setSearch() {
+        binding.search.setOnClickListener {
+            val intent = Intent(this@MainActivity,SearchActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

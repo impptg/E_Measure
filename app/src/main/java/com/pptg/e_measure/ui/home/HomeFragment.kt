@@ -61,6 +61,7 @@ class HomeFragment : Fragment() {
         binding.slHome.setOnRefreshListener {
             viewModel.refresh()
         }
+
         return root
     }
 
