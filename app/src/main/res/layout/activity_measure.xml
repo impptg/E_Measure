@@ -22,6 +22,7 @@
             android:background="@color/blue_500"
             app:title="Measure"
             app:navigationIcon="@drawable/ic_back"
+            android:onClick="backclick"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -29,7 +30,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="465dp"
+        android:layout_height="582dp"
         android:layout_marginTop="60dp"
         android:orientation="vertical"
         android:padding="8dp">
@@ -182,7 +183,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_measure"
             android:layout_width="match_parent"
-            android:layout_height="241dp"
+            android:layout_height="367dp"
             android:divider="#ffffff"
             android:dividerHeight="@dimen/divider_dp"
             android:drawSelectorOnTop="false" />

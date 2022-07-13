@@ -3,6 +3,7 @@ package com.pptg.e_measure.ui.measure
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,6 +41,10 @@ class MeasureActivity : AppCompatActivity() {
             val intent = Intent(this,ScanActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    fun backclick(view: View) {
+        finish()
     }
 
 
