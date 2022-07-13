@@ -12,8 +12,8 @@ import com.pptg.e_measure.R
 import com.pptg.e_measure.bean.TaskBean
 import com.pptg.e_measure.ui.measure.MeasureActivity
 
-class SearchAdapter(var activity: SearchActivity,var searchList: List<TaskBean>)
-    :RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
+class SearchAdapter(var activity: SearchActivity,var searchList: List<TaskBean>) :
+    RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val tv_name: TextView = view.findViewById(R.id.tv_name)
         val tv_disp: TextView = view.findViewById(R.id.tv_disp)

@@ -29,7 +29,12 @@ class SearchActivity : AppCompatActivity() ,View.OnClickListener{
         adapter = SearchAdapter(this,model.searchList)
         binding.searchResult.adapter = adapter
         binding.searchResult.layoutManager = layoutManager
+        model.mSearchList.observe(this,{
+            adapter.searchList = it
+            adapter.notifyDataSetChanged()
+        })
     }
+
     @CallSuper
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
         if (ev.action == MotionEvent.ACTION_DOWN){

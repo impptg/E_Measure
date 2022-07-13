@@ -2,6 +2,7 @@ package com.pptg.e_measure.ui.search
 
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.pptg.e_measure.EMApplication
@@ -12,6 +13,7 @@ import com.pptg.e_measure.network.response.TaskResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.math.log
 
 
 class SearchViewModel : ViewModel(){
@@ -22,6 +24,7 @@ class SearchViewModel : ViewModel(){
 
     var mList:List<TaskBean> = emptyList()
     var searchList = mutableListOf<TaskBean>()
+    val mSearchList = MutableLiveData<List<TaskBean>>()
     init {
         mList = EMApplication.dbManager.getTaskDao().queryTask()
     }
@@ -31,18 +34,21 @@ class SearchViewModel : ViewModel(){
         val appService = ServiceCreator.create<ApiNet>()
         appService.Task().enqueue(object : Callback<TaskResponse> {
             override fun onResponse(call: Call<TaskResponse>, response: Response<TaskResponse>) {
+                Log.d(TAG, "onResponse: 响应")
                 val body = response.body() as TaskResponse
                 mLiveList.value = body.data
                 //Log.d(TAG, "onResponse: "+mList)
                 mList = body.data
                 //Log.d(TAG, "onResponse: "+mList)
-                EMApplication.dbManager.getTaskDao().insertTask(mList)
+                // EMApplication.dbManager.getTaskDao().insertTask(mList)
                 //Log.d(TAG, body.toString())
                 for (task in mList) {
                     if (searchContent.equals(task.name)) {
                         searchList.add(task)
+                        mSearchList.value = searchList
                     }
                 }
+
                 if (searchList.isEmpty()) {
                     Toast.makeText(EMApplication.context,"报表不存在",Toast.LENGTH_LONG).show()
                 }else{

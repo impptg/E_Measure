@@ -33,6 +33,7 @@
         <activity
             android:name=".ui.measure.MeasureActivity"
             android:exported="true" />
+
         <activity
             android:name=".ui.settings.items.ChangePswdActivity"
             android:exported="true" />
