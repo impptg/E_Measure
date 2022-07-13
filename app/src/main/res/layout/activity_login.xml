@@ -15,13 +15,15 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736" />
+        app:layout_constraintVertical_bias="0.644" />
+
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="@dimen/login_edit_width"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/bg_edittext"
         android:hint="账号"
         android:inputType="text"
         android:maxLines="1"
@@ -33,11 +35,12 @@
     <EditText
         android:id="@+id/editText2"
         android:layout_width="@dimen/login_edit_width"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bg_edittext"
         android:hint="密码"
-        android:maxLines="1"
         android:inputType="textPassword"
+        android:maxLines="1"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -47,24 +50,26 @@
         android:id="@+id/preview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
         android:background="@drawable/ic_preview_close"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="@+id/editText2"
         app:layout_constraintEnd_toEndOf="@+id/editText2"
         app:layout_constraintTop_toTopOf="@+id/editText2" />
 
+
     <ImageButton
         android:id="@+id/button"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginBottom="140dp"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="148dp"
         android:background="@drawable/bg_circle"
+        android:rotationX="0"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_baseline_arrow_right_alt_24"
         android:tint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
@@ -72,23 +77,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
-        android:orientation="horizontal"
         android:gravity="center_horizontal"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
-            android:layout_weight="3"
             android:layout_width="0dp"
-            android:gravity="center"
             android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
             android:text="忘记密码" />
 
         <TextView
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:gravity="center"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="注册" />
 
         <TextView

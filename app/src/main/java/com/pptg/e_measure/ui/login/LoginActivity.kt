@@ -72,14 +72,6 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
         }
     }
 
-//    override fun onKeyDown(keyCode: Int, ev: KeyEvent): Boolean {
-//        if (keyCode == KeyEvent.KEYCODE_BACK)
-//            Toast.makeText(EMApplication.context, "账号或密码错误", Toast.LENGTH_SHORT).show()
-////            System.exit(0)
-////            exitBy2Click() //调用双击退出函数
-//        return false
-//    }
-
 
     override fun onClick(p0: View?) {
         when(p0?.id){
