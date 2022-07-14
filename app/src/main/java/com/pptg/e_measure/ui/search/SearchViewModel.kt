@@ -45,8 +45,10 @@ class SearchViewModel : ViewModel(){
                 for (task in mList) {
                     searchContent = searchContent.uppercase()
                     if (task.name.startsWith(searchContent)) {
-                        searchList.add(task)
-                        mSearchList.value = searchList
+                        if(task !in searchList) {
+                            searchList.add(task)
+                            mSearchList.value = searchList
+                        }
                     }
                 }
 

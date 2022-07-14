@@ -11,6 +11,7 @@ import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.bean.TaskBean
 import com.pptg.e_measure.ui.measure.MeasureActivity
+import java.lang.Exception
 
 class SearchAdapter(var activity: SearchActivity,var searchList: List<TaskBean>) :
     RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
@@ -25,11 +26,15 @@ class SearchAdapter(var activity: SearchActivity,var searchList: List<TaskBean>)
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_task, parent, false)
         val holder = ViewHolder(view)
         holder.itemView.setOnClickListener {
-            val mBean = searchList[holder.adapterPosition]
-            val intent = Intent(activity, MeasureActivity::class.java).apply {
-                putExtra(EMApplication.TASK_ID,mBean.taskID.toString())
+            try {
+                val mBean = searchList[holder.adapterPosition]
+                val intent = Intent(activity, MeasureActivity::class.java).apply {
+                    putExtra(EMApplication.TASK_ID, mBean.taskID.toString())
+                }
+                activity.startActivity(intent)
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
-            activity.startActivity(intent)
         }
         return holder
     }
