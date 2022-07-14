@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">E_Measure</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">首页</string>
+    <string name="title_history">历史记录</string>
+    <string name="title_settings">设置</string>
+</resources>

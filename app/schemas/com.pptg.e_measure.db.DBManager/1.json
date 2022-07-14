@@ -1,0 +1,132 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "8280888754b46103dbdf730364298706",
+    "entities": [
+      {
+        "tableName": "Task",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`taskID` INTEGER NOT NULL, `name` TEXT NOT NULL, `disp` TEXT NOT NULL, `attr` TEXT NOT NULL, `lim_l` TEXT NOT NULL, `lim_r` TEXT NOT NULL, PRIMARY KEY(`taskID`))",
+        "fields": [
+          {
+            "fieldPath": "taskID",
+            "columnName": "taskID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "disp",
+            "columnName": "disp",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "attr",
+            "columnName": "attr",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lim_l",
+            "columnName": "lim_l",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lim_r",
+            "columnName": "lim_r",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "taskID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "History",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`historyID` INTEGER NOT NULL, `name` TEXT NOT NULL, `disp` TEXT NOT NULL, `varue` TEXT NOT NULL, `attr` TEXT NOT NULL, `lim_l` TEXT NOT NULL, `lim_r` TEXT NOT NULL, `createTime` TEXT NOT NULL, `taskID` TEXT NOT NULL, PRIMARY KEY(`historyID`))",
+        "fields": [
+          {
+            "fieldPath": "historyID",
+            "columnName": "historyID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "disp",
+            "columnName": "disp",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "varue",
+            "columnName": "varue",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "attr",
+            "columnName": "attr",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lim_l",
+            "columnName": "lim_l",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lim_r",
+            "columnName": "lim_r",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createTime",
+            "columnName": "createTime",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "taskID",
+            "columnName": "taskID",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "historyID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8280888754b46103dbdf730364298706')"
+    ]
+  }
+}
