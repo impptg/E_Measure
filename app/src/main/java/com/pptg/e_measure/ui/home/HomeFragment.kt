@@ -1,5 +1,6 @@
 package com.pptg.e_measure.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.FragmentHomeBinding
+import com.pptg.e_measure.ui.search.SearchActivity
 import java.lang.Exception
 import kotlin.concurrent.thread
 
@@ -39,7 +41,10 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         adapter = HomeAdapter(this,viewModel.mList)
-
+        binding.search.setOnClickListener {
+            val intent = Intent(context,SearchActivity::class.java)
+            startActivity(intent)
+        }
 
         // viewModel.Task()
         val layoutManager = LinearLayoutManager(EMApplication.context)

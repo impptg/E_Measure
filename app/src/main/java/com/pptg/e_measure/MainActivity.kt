@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListe
         val navController = Navigation.findNavController(this,R.id.nav_host_fragment_activity_main)
         navController.addOnDestinationChangedListener(this)
         setNavView()
-        setSearch()
     }
 
     fun setNavView(){
@@ -54,12 +53,7 @@ class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListe
         binding.navView.setupWithNavController(navController)
     }
 
-    fun setSearch() {
-        binding.search.setOnClickListener {
-            val intent = Intent(this@MainActivity,SearchActivity::class.java)
-            startActivity(intent)
-        }
-    }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_toolbar_menu,menu)

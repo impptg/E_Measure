@@ -1,6 +1,5 @@
 package com.pptg.e_measure.ui.settings.items
 
-import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import android.view.View
