@@ -39,7 +39,6 @@ class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
         binding.olderPswd.setText(model.older_pswd)
         binding.newPswd.setText(model.new_pswd)
         binding.newPswd1.setText(model.new_pswd1)
-        binding.textView9.setText(model.user_name)
     }
     @CallSuper
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
@@ -80,7 +79,6 @@ class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
                 model.new_pswd = binding.newPswd.text.toString()
                 model.new_pswd1 = binding.newPswd1.text.toString()
                 val prefs = getSharedPreferences("user_name",Context.MODE_PRIVATE)
-                //model.changePswd(p0,prefs)
                 model.changePswd(prefs)
             }
         }

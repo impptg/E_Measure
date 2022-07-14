@@ -1,6 +1,5 @@
 package com.pptg.e_measure.ui.settings.items
 
-import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import android.view.View
@@ -22,7 +21,6 @@ class ChangePswdViewModel: ViewModel() {
     var older_pswd = ""
     var new_pswd = ""
     var new_pswd1 = ""
-    var user_name = ""
 
     fun changePswd(preferences: SharedPreferences) {
         var user_id  = preferences.getString("user_id","")
