@@ -76,6 +76,18 @@
 
 <img src="markdown/39921657614784.jpg" width = 25%/>
 
+### 22.7.13
+1. 新增记住密码
+2. 新增查找功能
+
+### 22.7.14
+1. UI页面的优化
+2. 修复查找Bug
+
+<img src="markdown/16577921901109.jpg" width = 25%/><img src="markdown/16577922210242" width = 25%/>
+
+
+
 
 ## 二、项目结构
 1. bean：各种基础的bean
