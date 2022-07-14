@@ -11,7 +11,6 @@ class SettingsViewModel : ViewModel() {
         private const val TAG = "NotificationViewModel"
     }
     var itemList = ArrayList<SettingsBean>()
-    val adapter = SettingsAdapter(itemList)
     fun notification() {
         itemList.add(SettingsBean("用户",-1,1))
         itemList.add(SettingsBean("BLANK",-1,3))

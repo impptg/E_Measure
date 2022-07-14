@@ -1,4 +1,6 @@
 package com.pptg.e_measure.ui.user
 
-class UserViewModel {
+import androidx.lifecycle.ViewModel
+
+class UserViewModel():ViewModel() {
 }

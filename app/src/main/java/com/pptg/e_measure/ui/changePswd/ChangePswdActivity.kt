@@ -1,32 +1,17 @@
-package com.pptg.e_measure.ui.settings.items
+package com.pptg.e_measure.ui.changePswd
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import com.pptg.e_measure.R
 import android.content.Context
 import android.os.IBinder
-import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
-import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.databinding.ActivityChangePwdBinding
-import com.pptg.e_measure.databinding.ActivityLoginBinding
-import com.pptg.e_measure.network.ApiNet
-import com.pptg.e_measure.network.ServiceCreator
-import com.pptg.e_measure.network.response.ChangePswdResponse
-import com.pptg.e_measure.network.response.LoginResponse
-import com.pptg.e_measure.ui.login.LoginViewModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import kotlin.math.log
 
 class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
 

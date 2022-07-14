@@ -21,8 +21,6 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/blue_500"
             app:title="Measure"
-            app:navigationIcon="@drawable/ic_back"
-            android:onClick="backclick"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -113,8 +111,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@color/white"
-
+                            app:tint = "@color/white"
                             android:src="@drawable/ic_baseline_arrow_drop_up_24" />
 
                         <TextView
@@ -138,7 +135,7 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@color/white"
+                            app:tint="@color/white"
                             android:src="@drawable/ic_baseline_arrow_drop_down_24" />
 
                         <TextView

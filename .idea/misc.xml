@@ -35,6 +35,7 @@
         <entry key="app/src/main/res/layout/activity_measure.xml" value="0.35692282725876623" />
         <entry key="app/src/main/res/layout/activity_scan.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_user.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.1" />

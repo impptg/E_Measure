@@ -26,7 +26,8 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".ui.user.UserActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="用户信息"/>
         <activity
             android:name=".ui.search.SearchActivity"
             android:exported="false" />
@@ -37,7 +38,7 @@
             android:name=".ui.measure.MeasureActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.settings.items.ChangePswdActivity"
+            android:name=".ui.changePswd.ChangePswdActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

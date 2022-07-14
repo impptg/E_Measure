@@ -18,6 +18,7 @@ class SettingsFragment: Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    lateinit var adapter:SettingsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,7 +35,8 @@ class SettingsFragment: Fragment() {
 
         val layoutManager = LinearLayoutManager(EMApplication.context)
         binding.rvSettings.layoutManager = layoutManager
-        binding.rvSettings.adapter = viewModel.adapter
+        adapter = SettingsAdapter(this,viewModel.itemList)
+        binding.rvSettings.adapter = adapter
 
         return root
     }

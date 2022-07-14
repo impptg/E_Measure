@@ -1,31 +1,21 @@
 package com.pptg.e_measure.ui.settings
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.res.ColorStateList
-import android.graphics.drawable.Drawable
-import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.ColorInt
-import androidx.annotation.ColorRes
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
-import androidx.core.graphics.drawable.TintAwareDrawable
-import androidx.core.view.TintableBackgroundView
-import androidx.core.widget.TintableImageSourceView
 import androidx.recyclerview.widget.RecyclerView
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.bean.SettingsBean
-import com.pptg.e_measure.ui.settings.items.ChangePswdActivity
+import com.pptg.e_measure.ui.changePswd.ChangePswdActivity
+import com.pptg.e_measure.ui.user.UserActivity
 import com.pptg.e_measure.utils.*
 
-class SettingsAdapter(val mList: List<SettingsBean>) : RecyclerView.Adapter<SettingsBaseHolder>() {
+class SettingsAdapter(val fragment: SettingsFragment,val mList: List<SettingsBean>) : RecyclerView.Adapter<SettingsBaseHolder>() {
 
     companion object {
         const val TYPE_USER = 1
@@ -63,6 +53,8 @@ class SettingsAdapter(val mList: List<SettingsBean>) : RecyclerView.Adapter<Sett
                 holder.itemView.setOnClickListener {
                     Toast.makeText(EMApplication.context, "更改头像、昵称、账户等其他信息", Toast.LENGTH_LONG)
                         .show()
+                    val intent = Intent(fragment.context,UserActivity::class.java)
+                    fragment.startActivity(intent)
                 }
             }
             is NormalHolder -> {

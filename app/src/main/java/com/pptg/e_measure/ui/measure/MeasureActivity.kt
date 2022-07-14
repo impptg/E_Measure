@@ -3,6 +3,7 @@ package com.pptg.e_measure.ui.measure
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
@@ -26,6 +27,9 @@ class MeasureActivity : AppCompatActivity() {
         setContentView(binding.root)
         val TaskID = intent.getStringExtra(EMApplication.TASK_ID)
 
+        setSupportActionBar(binding.tbMeasure)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         if (TaskID != null) {
             model.DecodeTask(TaskID)
         }
@@ -43,9 +47,14 @@ class MeasureActivity : AppCompatActivity() {
         }
     }
 
-    fun backclick(view: View) {
-        finish()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
-
 
 }
