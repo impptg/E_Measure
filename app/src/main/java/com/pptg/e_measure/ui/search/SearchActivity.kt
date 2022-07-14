@@ -9,6 +9,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.annotation.CallSuper
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pptg.e_measure.EMApplication
@@ -33,6 +34,11 @@ class SearchActivity : AppCompatActivity() ,View.OnClickListener{
             adapter.searchList = it
             adapter.notifyDataSetChanged()
         })
+        binding.searchContent.addTextChangedListener {
+            model.searchContent = binding.searchContent.text.toString()
+            model.search()
+            model.searchList.clear()
+        }
     }
 
     @CallSuper
@@ -70,9 +76,7 @@ class SearchActivity : AppCompatActivity() ,View.OnClickListener{
     override fun onClick(p0: View?) {
         when (p0?.id) {
             R.id.search_btn -> {
-                model.searchContent = binding.searchContent.text.toString()
-                model.search()
-                model.searchList.clear()
+                finish()
             }
         }
     }

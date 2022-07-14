@@ -43,7 +43,8 @@ class SearchViewModel : ViewModel(){
                 // EMApplication.dbManager.getTaskDao().insertTask(mList)
                 //Log.d(TAG, body.toString())
                 for (task in mList) {
-                    if (searchContent.equals(task.name)) {
+                    searchContent = searchContent.uppercase()
+                    if (task.name.startsWith(searchContent)) {
                         searchList.add(task)
                         mSearchList.value = searchList
                     }

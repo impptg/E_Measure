@@ -4,43 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/padding_dp"
     tools:context=".ui.search.SearchActivity">
-
-    <EditText
-        android:id="@+id/search_content"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="84dp"
-        android:background="@drawable/border_bg"
-        android:ems="10"
-        android:hint="search"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/search_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginEnd="56dp"
-        android:background="@drawable/border_bg"
-        android:text="搜索"
-        app:layout_constraintBottom_toBottomOf="@+id/search_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/search_content"
-        app:layout_constraintTop_toTopOf="@+id/search_content"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/search_result"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/search_btn"
-        app:layout_constraintHorizontal_bias="0.589"
-        app:layout_constraintStart_toStartOf="@+id/search_content"
-        app:layout_constraintTop_toBottomOf="@+id/search_content" />
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            app:elevation="0dp"
+            app:layout_scrollFlags="scroll|enterAlways|snap">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                app:layout_scrollFlags="scroll|enterAlways|snap">
+
+                <EditText
+                    android:id="@+id/search_content"
+                    android:layout_weight="5"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/border_bg"
+                    android:ems="10"
+                    android:maxLines="1"
+                    android:hint=" search"
+                    app:layout_scrollFlags="scroll|enterAlways|snap" />
+
+                <TextView
+                    android:id="@+id/search_btn"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/cornflowerblue"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="取消"
+                    app:layout_scrollFlags="scroll|enterAlways|snap" />
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
