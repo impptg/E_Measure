@@ -11,10 +11,9 @@
         android:id="@+id/iv_login_logo"
         android:layout_width="@dimen/login_icon_size"
         android:layout_height="@dimen/login_icon_size"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="76dp"
         android:src="@mipmap/logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

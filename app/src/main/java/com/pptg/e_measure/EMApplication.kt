@@ -23,6 +23,8 @@ class EMApplication : Application() {
         lateinit var dbManager: DBManager
         // intent信息
         const val TASK_ID = "taskID"
+        // sharedpreferences
+        const val USER_SP = "user"
     }
 
     override fun onCreate() {

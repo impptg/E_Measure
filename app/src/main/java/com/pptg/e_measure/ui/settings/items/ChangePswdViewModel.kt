@@ -11,6 +11,7 @@ import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.network.ApiNet
 import com.pptg.e_measure.network.ServiceCreator
 import com.pptg.e_measure.network.response.ChangePswdResponse
+import com.pptg.e_measure.sp.UserSP
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,8 +25,12 @@ class ChangePswdViewModel: ViewModel() {
     var new_pswd1 = ""
     var user_name = ""
 
-    fun changePswd(preferences: SharedPreferences) {
-        var user_id  = preferences.getString("user_id","")
+    init {
+        user_name = UserSP.getUserIDSP()
+    }
+
+    fun changePswd() {
+        var user_id  = UserSP.getUserIDSP()
         if (new_pswd.equals(new_pswd1) && user_id != null && older_pswd != null && new_pswd != null){
             Log.d(TAG,"进入了第一层判断")
 

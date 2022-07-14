@@ -81,7 +81,7 @@ class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
                 model.new_pswd1 = binding.newPswd1.text.toString()
                 val prefs = getSharedPreferences("user_name",Context.MODE_PRIVATE)
                 //model.changePswd(p0,prefs)
-                model.changePswd(prefs)
+                model.changePswd()
             }
         }
     }

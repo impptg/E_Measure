@@ -36,6 +36,7 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
         viewModel.isFinished.observe(this, {
             if(it) finish()
         })
+
     }
 
     @CallSuper
@@ -79,9 +80,7 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
                 //TODO 登陆相关
                 viewModel.user_id = viewBinding.editText.text.toString()
                 viewModel.user_pswd = viewBinding.editText2.text.toString()
-                //使用SharedPreferences来存储user_id
-                val editor = getSharedPreferences("user_name",Context.MODE_PRIVATE).edit()
-                viewModel.Login(p0,editor)
+                viewModel.Login(p0)
             }
             R.id.preview ->{
                 if(viewModel.isPreview) {
@@ -100,7 +99,6 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
                     viewBinding.editText2.setSelection(viewBinding.editText2.text.length)
                 }
             }
-
             null -> Toast.makeText(this,"NULL",Toast.LENGTH_SHORT).show()
         }
     }

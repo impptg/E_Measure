@@ -14,6 +14,7 @@ import com.pptg.e_measure.MainActivity
 import com.pptg.e_measure.network.response.LoginResponse
 import com.pptg.e_measure.network.ApiNet
 import com.pptg.e_measure.network.ServiceCreator
+import com.pptg.e_measure.sp.UserSP
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Call
@@ -27,11 +28,15 @@ class LoginViewModel : ViewModel(){
     var user_id = ""
     var user_pswd = ""
     var isPreview = false
+    init {
+        user_id = UserSP.getUserIDSP()
+        user_pswd = UserSP.getUserPswdSP()
+    }
 
 
 
 
-    fun Login(view: View,editor: SharedPreferences.Editor){
+    fun Login(view: View){
         val appService = ServiceCreator.create<ApiNet>()
         appService.Login(user_id,user_pswd).enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
@@ -40,8 +45,7 @@ class LoginViewModel : ViewModel(){
                     Toast.makeText(EMApplication.context, body.data.info, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, body.toString())
                     //完成user_name的存储
-                    editor.putString("user_id",user_id)
-                    editor.apply()
+                    UserSP.setUserSP(user_id,user_pswd)
                     val context = view.context
                     var intent = Intent(context,MainActivity::class.java)
                     context.startActivity(intent)
