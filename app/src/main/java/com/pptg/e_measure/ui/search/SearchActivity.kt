@@ -72,6 +72,7 @@ class SearchActivity : AppCompatActivity() ,View.OnClickListener{
             R.id.search_btn -> {
                 model.searchContent = binding.searchContent.text.toString()
                 model.search()
+                model.searchList.clear()
             }
         }
     }
