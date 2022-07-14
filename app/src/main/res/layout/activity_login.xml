@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.login.LoginActivity">
 
-
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="156dp"
-        android:layout_height="117dp"
+        android:id="@+id/iv_login_logo"
+        android:layout_width="@dimen/login_icon_size"
+        android:layout_height="@dimen/login_icon_size"
         android:layout_marginTop="88dp"
         android:src="@mipmap/logo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,25 +22,25 @@
         android:id="@+id/cv_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="@dimen/login_margin"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="@dimen/login_margin"
         android:backgroundTint="@color/gray_100"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:cardCornerRadius="@dimen/login_edit_corner"
+        app:cardElevation="@dimen/login_edit_ele"
+        app:layout_constraintTop_toBottomOf="@id/iv_login_logo">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="2dp">
+            android:padding="@dimen/login_edit_padding">
 
             <EditText
                 android:id="@+id/editText"
-                android:layout_width="@dimen/login_edit_width"
-                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/login_margin"
+                android:layout_marginRight="@dimen/login_margin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_edit_h"
                 android:background="@drawable/bg_edittext"
                 android:hint="账号"
                 android:inputType="text"
@@ -56,12 +56,12 @@
         android:id="@+id/cv_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="@dimen/login_margin"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginRight="@dimen/login_margin"
         android:backgroundTint="@color/gray_100"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="0dp"
+        app:cardCornerRadius="@dimen/login_edit_corner"
+        app:cardElevation="@dimen/login_edit_ele"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_1">
@@ -70,31 +70,32 @@
             android:id="@+id/cl_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="2dp">
+            android:padding="@dimen/login_edit_padding">
 
             <EditText
                 android:id="@+id/editText2"
-                android:layout_width="@dimen/login_edit_width"
-                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/login_margin"
+                android:layout_marginRight="@dimen/login_margin"
+                android:layout_height="@dimen/login_edit_h"
+                android:layout_width="match_parent"
                 android:background="@drawable/bg_edittext"
                 android:hint="密码"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/preview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/login_eye_size"
+                android:layout_height="@dimen/login_eye_size"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/ic_preview_close"
                 android:clickable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/editText2"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tint="@color/gray_100" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -104,10 +105,10 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/login_margin"
+        android:layout_marginRight="@dimen/login_margin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_2">
 
@@ -126,12 +127,13 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="已阅读并同意"
+            android:text="我已阅读并同意"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/checkBox"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="服务须知"
@@ -140,19 +142,38 @@
             app:layout_constraintStart_toEndOf="@+id/textView10"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="和"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户协议"
+            android:textColor="@color/cornflowerblue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
         android:id="@+id/button"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginLeft="@dimen/login_btn_margin"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="@dimen/login_btn_margin"
         android:background="@drawable/bg_circle"
-        android:rotationX="0"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_baseline_arrow_right_alt_24"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:tint="@color/white" />
