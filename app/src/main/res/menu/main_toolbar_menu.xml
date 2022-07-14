@@ -4,8 +4,8 @@
 
     <item
         android:id="@+id/btn_refresh"
-        android:icon="@drawable/ic_baseline_refresh_24"
-        android:title="刷新"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="查找"
         app:showAsAction="always"/>
 
 </menu>

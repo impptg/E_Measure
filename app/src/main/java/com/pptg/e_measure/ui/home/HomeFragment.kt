@@ -41,10 +41,6 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         adapter = HomeAdapter(this,viewModel.mList)
-        binding.search.setOnClickListener {
-            val intent = Intent(context,SearchActivity::class.java)
-            startActivity(intent)
-        }
 
         // viewModel.Task()
         val layoutManager = LinearLayoutManager(EMApplication.context)

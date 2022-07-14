@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
         viewBinding.preview.setOnClickListener(this)
         viewBinding.editText.setText(viewModel.user_id)
         viewBinding.editText2.setText(viewModel.user_pswd)
-
+        viewBinding.checkBox.isChecked = viewModel.user_read
         viewModel.isFinished.observe(this, {
             if(it) finish()
         })

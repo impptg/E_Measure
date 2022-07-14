@@ -5,12 +5,10 @@
       <map>
         <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/activity_change_pwd.xml" value="0.4239583333333333" />
         <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/activity_search.xml" value="0.20618034447821681" />
-        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/fragment_home.xml" value="0.21331521739130435" />
-        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/item_task.xml" value="0.20618034447821681" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.3229166666666667" />
         <entry key="app/src/main/res/drawable/bg_edittext.xml" value="0.2125" />
+        <entry key="app/src/main/res/drawable/border_bg.xml" value="0.31851851851851853" />
         <entry key="app/src/main/res/drawable/btn_preview.xml" value="0.41302083333333334" />
         <entry key="app/src/main/res/drawable/ic_baselin_selector_check_true.xml" value="0.30625" />
         <entry key="app/src/main/res/drawable/ic_baseline_add_chart_24.xml" value="0.39739583333333334" />
@@ -38,7 +36,7 @@
         <entry key="app/src/main/res/layout/activity_scan.xml" value="0.23802083333333332" />
         <entry key="app/src/main/res/layout/activity_search.xml" value="0.396875" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2796875" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2796875" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.37604166666666666" />
@@ -49,7 +47,7 @@
         <entry key="app/src/main/res/layout/item_settings_blank.xml" value="0.396875" />
         <entry key="app/src/main/res/layout/item_settings_normal.xml" value="0.24528301886792453" />
         <entry key="app/src/main/res/layout/item_settings_user.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/item_task.xml" value="0.35234814916773455" />
+        <entry key="app/src/main/res/layout/item_task.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_test.xml" value="0.5" />
         <entry key="app/src/main/res/layout/notification_item.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2796875" />

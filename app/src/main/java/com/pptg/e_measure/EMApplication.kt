@@ -23,7 +23,7 @@ class EMApplication : Application() {
         lateinit var dbManager: DBManager
         // intent信息
         const val TASK_ID = "taskID"
-        // sharedpreferences
+        // sp
         const val USER_SP = "user"
     }
 

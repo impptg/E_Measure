@@ -27,10 +27,12 @@ class LoginViewModel : ViewModel(){
     var isFinished : MutableLiveData<Boolean> = MutableLiveData(false)
     var user_id = ""
     var user_pswd = ""
+    var user_read = false
     var isPreview = false
     init {
-        user_id = UserSP.getUserIDSP()
-        user_pswd = UserSP.getUserPswdSP()
+        user_id = UserSP.getUser(UserSP.USER_ID)
+        user_pswd = UserSP.getUser(UserSP.USER_PSWD)
+        user_read = UserSP.getUser(UserSP.USER_READ) == "true"
     }
 
 
@@ -45,7 +47,11 @@ class LoginViewModel : ViewModel(){
                     Toast.makeText(EMApplication.context, body.data.info, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, body.toString())
                     //完成user_name的存储
-                    UserSP.setUserSP(user_id,user_pswd)
+                    UserSP.setUser {
+                        putString(UserSP.USER_ID,user_id)
+                        putString(UserSP.USER_PSWD,user_pswd)
+                        putString(UserSP.USER_READ,"true")
+                    }
                     val context = view.context
                     var intent = Intent(context,MainActivity::class.java)
                     context.startActivity(intent)

@@ -63,7 +63,8 @@ class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListe
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.btn_refresh ->{
-                Toast.makeText(EMApplication.context,"refresh",Toast.LENGTH_SHORT).show()
+                val intent = Intent(this,SearchActivity::class.java)
+                startActivity(intent)
             }
         }
         return true

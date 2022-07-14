@@ -22,14 +22,13 @@ class ChangePswdViewModel: ViewModel() {
     var older_pswd = ""
     var new_pswd = ""
     var new_pswd1 = ""
-    var user_name = ""
+    var user_id = ""
 
     init {
-        user_name = UserSP.getUserIDSP()
+        user_id = UserSP.getUser(UserSP.USER_ID)
     }
 
     fun changePswd() {
-        var user_id  = UserSP.getUserIDSP()
         if (new_pswd.equals(new_pswd1) && user_id != null && older_pswd != null && new_pswd != null){
             Log.d(TAG,"进入了第一层判断")
 
