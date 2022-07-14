@@ -3,7 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="login_edit_width">350dp</dimen>
+    <dimen name="login_edit_width">280dp</dimen>
     <dimen name="login_btn_size">50dp</dimen>
 
     <dimen name="padding_dp">10dp</dimen>
