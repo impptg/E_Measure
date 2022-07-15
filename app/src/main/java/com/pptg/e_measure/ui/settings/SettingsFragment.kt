@@ -1,5 +1,6 @@
 package com.pptg.e_measure.ui.settings
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.databinding.FragmentSettingsBinding
+import com.pptg.e_measure.ui.ChangeFontActivity
 import com.pptg.e_measure.ui.settings.SettingsViewModel
 
 class SettingsFragment: Fragment() {
@@ -38,6 +40,9 @@ class SettingsFragment: Fragment() {
         adapter = SettingsAdapter(this,viewModel.itemList)
         binding.rvSettings.adapter = adapter
 
+        //测试
+        val intent = Intent(context,ChangeFontActivity::class.java)
+        startActivity(intent)
         return root
     }
     override fun onStop() {

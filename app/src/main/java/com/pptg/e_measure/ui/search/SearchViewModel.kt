@@ -44,7 +44,13 @@ class SearchViewModel : ViewModel(){
                 //Log.d(TAG, body.toString())
                 for (task in mList) {
                     searchContent = searchContent.uppercase()
-                    if (task.name.startsWith(searchContent)) {
+//                    if (task.name.startsWith(searchContent)) {
+//                        if(task !in searchList) {
+//                            searchList.add(task)
+//                            mSearchList.value = searchList
+//                        }
+//                    }
+                    if(task.name.contains(searchContent)){
                         if(task !in searchList) {
                             searchList.add(task)
                             mSearchList.value = searchList
