@@ -2,6 +2,7 @@ package com.pptg.e_measure.ui.History
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import com.pptg.e_measure.R
@@ -19,6 +20,7 @@ class HistoryActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.tbHistory)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -29,5 +31,9 @@ class HistoryActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        private const val TAG = "HistoryActivity"
     }
 }
