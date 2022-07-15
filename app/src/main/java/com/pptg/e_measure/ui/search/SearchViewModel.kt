@@ -32,11 +32,14 @@ class SearchViewModel : ViewModel(){
     val mLiveList = MutableLiveData<List<TaskBean>>()
     fun search() {
         val appService = ServiceCreator.create<ApiNet>()
+        // 动画
+
         appService.Task().enqueue(object : Callback<TaskResponse> {
             override fun onResponse(call: Call<TaskResponse>, response: Response<TaskResponse>) {
                 Log.d(TAG, "onResponse: 响应")
+                //结束
                 val body = response.body() as TaskResponse
-                mLiveList.value = body.data
+                mLiveList.value = body.data!!
                 //Log.d(TAG, "onResponse: "+mList)
                 mList = body.data
                 //Log.d(TAG, "onResponse: "+mList)
@@ -44,8 +47,8 @@ class SearchViewModel : ViewModel(){
                 //Log.d(TAG, body.toString())
                 for (task in mList) {
                     searchContent = searchContent.uppercase()
-                    if (task.name.startsWith(searchContent)) {
-                        if(task !in searchList) {
+                    if (task.name.contains(searchContent)) {
+                       if(task !in searchList) {
                             searchList.add(task)
                             mSearchList.value = searchList
                         }

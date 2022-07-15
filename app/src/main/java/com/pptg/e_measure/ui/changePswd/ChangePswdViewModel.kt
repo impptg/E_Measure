@@ -37,8 +37,7 @@ class ChangePswdViewModel: ViewModel() {
                 Callback<ChangePswdResponse> {
                 override fun onResponse(
                     call: Call<ChangePswdResponse>,
-                    response: Response<ChangePswdResponse>
-                ) {
+                    response: Response<ChangePswdResponse>) {
                     val body = response.body() as ChangePswdResponse
                     Log.d(TAG,body.toString())
                     if (body.data.status.equals("true")){
@@ -48,7 +47,6 @@ class ChangePswdViewModel: ViewModel() {
                         Toast.makeText(EMApplication.context,body.data.info, Toast.LENGTH_LONG).show()
                     }
                 }
-
                 override fun onFailure(call: Call<ChangePswdResponse>, t: Throwable) {
                     t.printStackTrace()
                 }

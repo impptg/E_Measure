@@ -6,6 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".ui.changePswd.ChangePswdActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar_pswd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_pswd"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/blue_500"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
 
     <EditText
         android:id="@+id/older_pswd"
@@ -128,17 +146,6 @@
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/new_pswd1" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="67dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="16dp"
-        android:text="修改密码"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

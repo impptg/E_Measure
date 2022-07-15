@@ -40,10 +40,13 @@ class LoginViewModel : ViewModel(){
 
     fun Login(view: View){
         val appService = ServiceCreator.create<ApiNet>()
+        // 放动画
+
         appService.Login(user_id,user_pswd).enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 val body = response.body() as LoginResponse
                 if (body.data.status.equals("true")){
+                    //动画结束
                     Toast.makeText(EMApplication.context, body.data.info, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, body.toString())
                     //完成user_name的存储
@@ -63,10 +66,9 @@ class LoginViewModel : ViewModel(){
             }
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                // 动画结束
                 t.printStackTrace()
             }
         })
     }
-
-
 }

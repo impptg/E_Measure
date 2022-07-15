@@ -21,7 +21,7 @@ import kotlin.concurrent.thread
 
 class HomeFragment : Fragment() {
 
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var model: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
     private lateinit var adapter: HomeAdapter
 
@@ -34,24 +34,24 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel =
+        model =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        adapter = HomeAdapter(this,viewModel.mList)
+        adapter = HomeAdapter(this,model.mList)
 
-        // viewModel.Task()
+        // model.Task()
         val layoutManager = LinearLayoutManager(EMApplication.context)
         binding.rvHome.layoutManager = layoutManager
         binding.rvHome.adapter = adapter
 
-        viewModel.mLiveList.observe(viewLifecycleOwner, Observer { mLiveList ->
-            if(mLiveList != null){
-                Toast.makeText(EMApplication.context,mLiveList.toString(),Toast.LENGTH_SHORT).show()
-                viewModel.mList = mLiveList
-                adapter.mList = mLiveList
+        model.mLiveList.observe(viewLifecycleOwner, Observer { result ->
+            if(result != null){
+                Toast.makeText(EMApplication.context,result.toString(),Toast.LENGTH_SHORT).show()
+                model.mList = result
+                adapter.mList = result
                 adapter.notifyDataSetChanged()
             }else{
 
@@ -60,7 +60,7 @@ class HomeFragment : Fragment() {
         })
 
         binding.slHome.setOnRefreshListener {
-            viewModel.refresh()
+            model.refresh()
         }
 
         return root

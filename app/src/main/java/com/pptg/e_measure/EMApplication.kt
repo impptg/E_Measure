@@ -13,7 +13,7 @@ class EMApplication : Application() {
         // 是否Mock
         const val ISMOCK = true
         // 正式地址
-        const val HOST_URL = "http://47.95.223.213/myadmin/"
+        const val HOST_URL = "https://www.emeasure.cn/myadmin/"
         // MOCK地址
         const val MOCK_URL = "https://mock.apifox.cn/m1/1227265-0-default/myadmin/"
         // 全局 context

@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.pptg.e_measure.R
 import android.content.Context
 import android.os.IBinder
+import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -24,6 +25,10 @@ class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
         binding.olderPswd.setText(model.older_pswd)
         binding.newPswd.setText(model.new_pswd)
         binding.newPswd1.setText(model.new_pswd1)
+
+        setSupportActionBar(binding.tbPswd)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
     @CallSuper
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
@@ -66,6 +71,16 @@ class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
                 model.changePswd()
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {
