@@ -15,8 +15,8 @@ class HistoryBean {
     @ColumnInfo(name = "disp")
     var disp:String = "disp"
 
-    @ColumnInfo(name = "varue")
-    var varue:String = "varue"
+    @ColumnInfo(name = "value")
+    var value:String = "value"
 
     @ColumnInfo(name = "attr")
     var attr:String = "attr"

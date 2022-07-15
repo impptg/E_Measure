@@ -16,6 +16,10 @@ class SettingsViewModel : ViewModel() {
         itemList.add(SettingsBean("BLANK",-1,3))
 //        itemList.add(SettingsBean("BLANK",-1,3))
         itemList.add(
+            SettingsBean("历史",R.drawable.ic_baseline_list,2,
+                EMApplication.context.getResources().getColor(R.color.gray_700,null))
+        )
+        itemList.add(
             SettingsBean("安全",R.drawable.ic_baseline_security_24,2,
             EMApplication.context.getResources().getColor(R.color.green_400,null))
         )

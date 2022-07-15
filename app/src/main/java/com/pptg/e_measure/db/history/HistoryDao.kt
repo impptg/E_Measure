@@ -8,6 +8,9 @@ interface HistoryDao {
     @Query("select * from History where historyID = :historyID")
     fun queryHistory(historyID:Int): HistoryBean
 
+    @Query("select * from History")
+    fun queryHistory(): List<HistoryBean>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertHistory(element: HistoryBean)
 

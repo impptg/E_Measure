@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.bean.SettingsBean
+import com.pptg.e_measure.ui.History.HistoryActivity
 import com.pptg.e_measure.ui.changePswd.ChangePswdActivity
 import com.pptg.e_measure.ui.user.UserActivity
 import com.pptg.e_measure.utils.*
@@ -63,11 +64,18 @@ class SettingsAdapter(val fragment: SettingsFragment,val mList: List<SettingsBea
                 holder.iv_settings.setBackgroundTintColor(mBean.color)
                 //安全（修改密码的点击响应）
                 holder.itemView.setOnClickListener {
-                    if (holder.tv_settings.text.equals("安全")) {
-                        Toast.makeText(EMApplication.context, "修改密码", Toast.LENGTH_LONG).show()
-                        val context = holder.itemView.context
-                        var intent = Intent(context, ChangePswdActivity::class.java)
-                        context.startActivity(intent)
+                    when (holder.tv_settings.text) {
+                        "安全" -> {
+                            Toast.makeText(EMApplication.context, "修改密码", Toast.LENGTH_LONG).show()
+                            val context = holder.itemView.context
+                            var intent = Intent(context, ChangePswdActivity::class.java)
+                            context.startActivity(intent)
+                        }
+                        "历史" -> {
+                            val context = holder.itemView.context
+                            var intent = Intent(context, HistoryActivity::class.java)
+                            context.startActivity(intent)
+                        }
                     }
                 }
             }

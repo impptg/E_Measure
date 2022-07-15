@@ -25,9 +25,13 @@
         android:theme="@style/Theme.E_Measure"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.History.HistoryActivity"
+            android:exported="true"
+            android:label="历史记录"/>
+        <activity
             android:name=".ui.user.UserActivity"
             android:exported="true"
-            android:label="用户信息"/>
+            android:label="用户信息" />
         <activity
             android:name=".ui.search.SearchActivity"
             android:exported="false" />
@@ -40,22 +44,21 @@
         <activity
             android:name=".ui.changePswd.ChangePswdActivity"
             android:exported="true"
-            android:label="修改密码"/>
+            android:label="修改密码" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/title_activity_main">
-        </activity>
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>
