@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
+import com.pptg.e_measure.bean.TaskBean
 import com.pptg.e_measure.databinding.FragmentHomeBinding
 import com.pptg.e_measure.ui.search.SearchActivity
 import java.lang.Exception
@@ -42,27 +43,29 @@ class HomeFragment : Fragment() {
 
         adapter = HomeAdapter(this,model.mList)
 
-        // model.Task()
         val layoutManager = LinearLayoutManager(EMApplication.context)
         binding.rvHome.layoutManager = layoutManager
         binding.rvHome.adapter = adapter
 
-        model.mLiveList.observe(viewLifecycleOwner, Observer { result ->
-            if(result != null){
-                Toast.makeText(EMApplication.context,result.toString(),Toast.LENGTH_SHORT).show()
-                model.mList = result
-                adapter.mList = result
-                adapter.notifyDataSetChanged()
-            }else{
-
+        model.isRefresh.observe(viewLifecycleOwner, Observer {
+            when(it){
+                HomeEnum.Init -> {}
+                HomeEnum.START -> {}
+                HomeEnum.SUCCESS -> {
+                    adapter.mList = model.mList
+                    adapter.notifyDataSetChanged()
+                    binding.slHome.isRefreshing = false
+                }
+                HomeEnum.FAILED -> {
+                    Toast.makeText(activity,it.toString(),Toast.LENGTH_SHORT).show()
+                    binding.slHome.isRefreshing = false
+                }
             }
-            binding.slHome.isRefreshing = false
         })
 
         binding.slHome.setOnRefreshListener {
             model.refresh()
         }
-
         return root
     }
 

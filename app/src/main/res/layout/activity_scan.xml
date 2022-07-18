@@ -25,10 +25,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_scan"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+        app:layout_constraintTop_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

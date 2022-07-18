@@ -26,5 +26,9 @@
     <dimen name="login_eye_size">20dp</dimen>
     <dimen name="login_btn_h">50dp</dimen>
     <dimen name="login_btn_margin">50dp</dimen>
+
+    <!--修改密码-->
+    <dimen name="change_item_h">40dp</dimen>
+    <dimen name="change_item_padding">8dp</dimen>
     
 </resources>

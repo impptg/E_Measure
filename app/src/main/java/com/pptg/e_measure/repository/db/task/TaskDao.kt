@@ -1,11 +1,11 @@
-package com.pptg.e_measure.db.task
+package com.pptg.e_measure.repository.db.task
 
 import androidx.room.*
-import com.pptg.e_measure.db.base.BaseDao
+import com.pptg.e_measure.repository.db.base.BaseDao
 import com.pptg.e_measure.bean.TaskBean
 
 @Dao
-interface TaskDao:BaseDao<TaskBean> {
+interface TaskDao: BaseDao<TaskBean> {
     @Query("select * from Task")
     fun queryTask(): List<TaskBean>
 
@@ -23,4 +23,7 @@ interface TaskDao:BaseDao<TaskBean> {
 
     @Delete
     fun deleteTask(mList: List<TaskBean>)
+
+    @Query("delete from Task")
+    fun deleteAllTask()
 }

@@ -1,4 +1,4 @@
-package com.pptg.e_measure.sp
+package com.pptg.e_measure.repository.sp
 
 import android.content.Context
 import android.content.SharedPreferences

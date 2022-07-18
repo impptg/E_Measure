@@ -9,12 +9,15 @@ import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.ActivityScanBinding
+import com.pptg.e_measure.ui.measure.MeasureActivity
 
 class ScanActivity : AppCompatActivity() {
     val binding by lazy { ActivityScanBinding.inflate(layoutInflater) }
@@ -22,6 +25,7 @@ class ScanActivity : AppCompatActivity() {
     lateinit var adapter:ScanAdapter
     lateinit var mHandler:Handler
     lateinit var mBluetoothAdapter:BluetoothAdapter
+    var TASKID = ""
 
     private var mScanning:Boolean = false
 
@@ -34,14 +38,14 @@ class ScanActivity : AppCompatActivity() {
         setContentView(binding.root)
         mHandler = Handler()
 
+        TASKID = intent.getStringExtra(EMApplication.TASK_ID).toString()
+
 
         // 检查设备是否支持BLE
         if (!packageManager.hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
             Toast.makeText(this, "设备不支持蓝牙", Toast.LENGTH_SHORT).show()
             finish()
         }
-
-        // 通过系统的蓝牙管理器获取蓝牙适配器
 
         // 通过系统的蓝牙管理器获取蓝牙适配器
         val bluetoothManager = getSystemService(BLUETOOTH_SERVICE) as BluetoothManager
@@ -51,13 +55,11 @@ class ScanActivity : AppCompatActivity() {
         if (mBluetoothAdapter == null) {
             Toast.makeText(this, "蓝牙不可用", Toast.LENGTH_SHORT).show()
             finish()
-            return
         }
     }
 
     override fun onResume() {
         super.onResume()
-
         // 确保启动蓝牙
         if (!mBluetoothAdapter.isEnabled) {
             val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
@@ -69,6 +71,25 @@ class ScanActivity : AppCompatActivity() {
         binding.rvScan.adapter = adapter
         binding.rvScan.layoutManager = LinearLayoutManager(this)
 
+        adapter.setOnItemClickListener(object : ScanAdapter.OnItemClickListener{
+            override fun onItemClick(view: View, pos: Int) {
+                val device = adapter.mList[pos]
+                device.let {
+                    val intent = Intent(this@ScanActivity,MeasureActivity::class.java)
+                    intent.apply {
+                        putExtra(EMApplication.TASK_ID,TASKID)
+                        putExtra(EMApplication.DEVICE_ADDRESS,it.address)
+                        putExtra(EMApplication.DEVICE_NAME,it.name)
+                        setResult(1,this)
+                    }
+                }
+                if(mScanning){
+                    mBluetoothAdapter.stopLeScan(mLeScanCallback)
+                    mScanning = false
+                }
+                this@ScanActivity.finish()
+            }
+        })
         scanLeDevice(true)
     }
 
@@ -105,5 +126,4 @@ class ScanActivity : AppCompatActivity() {
                 }
             }
         }
-
 }

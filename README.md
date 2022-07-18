@@ -92,6 +92,15 @@
 2. 模拟测量，保存记录
 <img src="markdown/16578919242420.jpg" width = 25%/>
 
+### 22.7.18
+1. 网络/数据库全面接入协程
+2. viewmodel重写
+3. 新增登陆、修改密码动画
+4. 完善修改密码界面
+
+<img src="markdown/C080D45F124B551DBB5B87DD2AC48019.jpg" width = 25%/>
+
+
 ## 二、项目结构
 1. bean：各种基础的bean
 2. db：数据库相关

@@ -14,6 +14,12 @@ import kotlin.math.log
 class BLEService():Service() {
     companion object{
         private const val TAG = "BLEService"
+        val ACTION_GATT_CONNECTED = "com.example.bluetooth.le.ACTION_GATT_CONNECTED"
+        val ACTION_GATT_DISCONNECTED = "com.example.bluetooth.le.ACTION_GATT_DISCONNECTED"
+        val ACTION_GATT_SERVICES_DISCOVERED =
+            "com.example.bluetooth.le.ACTION_GATT_SERVICES_DISCOVERED"
+        val ACTION_DATA_AVAILABLE = "com.example.bluetooth.le.ACTION_DATA_AVAILABLE"
+        val EXTRA_DATA = "com.example.bluetooth.le.EXTRA_DATA"
     }
 
     private var mBluetoothManager // 蓝牙管理器
@@ -27,15 +33,12 @@ class BLEService():Service() {
     private val STATE_CONNECTING = 1
     private val STATE_CONNECTED = 2
 
+    private val mBinder: IBinder = LocalBinder()
+
     private var mConnectionState = STATE_DISCONNECTED
 
-    val ACTION_GATT_CONNECTED = "com.example.bluetooth.le.ACTION_GATT_CONNECTED"
-    val ACTION_GATT_DISCONNECTED = "com.example.bluetooth.le.ACTION_GATT_DISCONNECTED"
-    val ACTION_GATT_SERVICES_DISCOVERED = "com.example.bluetooth.le.ACTION_GATT_SERVICES_DISCOVERED"
-    val ACTION_DATA_AVAILABLE = "com.example.bluetooth.le.ACTION_DATA_AVAILABLE"
-    val EXTRA_DATA = "com.example.bluetooth.le.EXTRA_DATA"
 
-    val UUID_HEART_RATE_MEASUREMENT = UUID.fromString(SampleGatt.HEART_RATE_MEASUREMENT)
+    val UUID_HEART_RATE_MEASUREMENT = UUID.fromString("00002a37-0000-1000-8000-00805f9b34fb")
 
     // Implements callback methods for GATT events that the app cares about.  For example,
     // connection change and services discovered.
@@ -157,6 +160,7 @@ class BLEService():Service() {
     }
 
     override fun onBind(intent: Intent?): IBinder? {
+        Log.d(TAG, "onBind : 绑定")
         return mBinder
     }
 
@@ -167,8 +171,6 @@ class BLEService():Service() {
         close()
         return super.onUnbind(intent)
     }
-
-    private val mBinder: IBinder = LocalBinder()
 
     /**
      * Initializes a reference to the local Bluetooth adapter.
@@ -219,6 +221,7 @@ class BLEService():Service() {
                 false
             }
         }
+        Log.d(TAG, "connect: "+address)
         val device = mBluetoothAdapter!!.getRemoteDevice(address)
         if (device == null) {
             Log.w(TAG, "Device not found.  Unable to connect.")

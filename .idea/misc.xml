@@ -28,10 +28,10 @@
         <entry key="app/src/main/res/drawable/item_task_2.xml" value="0.3921875" />
         <entry key="app/src/main/res/drawable/item_task_3.xml" value="0.3921875" />
         <entry key="app/src/main/res/drawable/selector_checkbox.xml" value="0.1828125" />
-        <entry key="app/src/main/res/layout/activity_change_pwd.xml" value="0.2390625" />
+        <entry key="app/src/main/res/layout/activity_change_pwd.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_history.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.27447916666666666" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18024691358024691" />
         <entry key="app/src/main/res/layout/activity_measure.xml" value="0.12727272727272726" />
         <entry key="app/src/main/res/layout/activity_scan.xml" value="0.23802083333333332" />

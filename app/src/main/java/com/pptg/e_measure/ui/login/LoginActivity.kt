@@ -1,6 +1,7 @@
 package com.pptg.e_measure.ui.login
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
@@ -18,25 +19,45 @@ import androidx.annotation.CallSuper
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import com.pptg.e_measure.EMApplication
+import com.pptg.e_measure.MainActivity
 import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity(),View.OnClickListener {
 
-    val viewModel by lazy{ ViewModelProvider(this).get(LoginViewModel::class.java)}
-    val viewBinding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
+    val model by lazy{ ViewModelProvider(this).get(LoginViewModel::class.java)}
+    val binding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(viewBinding.root)
-        viewBinding.button.setOnClickListener(this)
-        viewBinding.preview.setOnClickListener(this)
-        viewBinding.editText.setText(viewModel.user_id)
-        viewBinding.editText2.setText(viewModel.user_pswd)
-        viewBinding.checkBox.isChecked = viewModel.user_read
-        viewModel.isFinished.observe(this, {
-            if(it) finish()
-        })
+        setContentView(binding.root)
+        binding.button.setOnClickListener(this)
+        binding.preview.setOnClickListener(this)
+        binding.editText.setText(model.user_id)
+        binding.editText2.setText(model.user_pswd)
+        binding.checkBox.isChecked = model.user_read
 
+        model.isLogin.observe(this,{
+            when(it){
+                LoginEnum.Init -> {
+                    // 初始状态
+                }
+                LoginEnum.START -> {
+                    // 开始登陆
+                    binding.pbLogin.visibility = View.VISIBLE
+                }
+                LoginEnum.SUCCESS -> {
+                    // 登陆成功
+                    binding.pbLogin.visibility = View.GONE
+                    startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                    this@LoginActivity.finish()
+                }
+                LoginEnum.FAILED -> {
+                    // 登陆失败
+                    binding.pbLogin.visibility = View.GONE
+                    Toast.makeText(this,"账号或密码错误",Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
     }
 
     @CallSuper
@@ -78,25 +99,25 @@ class LoginActivity : AppCompatActivity(),View.OnClickListener {
         when(p0?.id){
             R.id.button ->{
                 //TODO 登陆相关
-                viewModel.user_id = viewBinding.editText.text.toString()
-                viewModel.user_pswd = viewBinding.editText2.text.toString()
-                viewModel.Login(p0)
+                model.user_id = binding.editText.text.toString()
+                model.user_pswd = binding.editText2.text.toString()
+                model.Login()
             }
             R.id.preview ->{
-                if(viewModel.isPreview) {
+                if(model.isPreview) {
                     Log.d(TAG, "onClick: 不可见")
-                    Log.d(TAG, "onClick: "+viewBinding.editText2.inputType)
+                    Log.d(TAG, "onClick: "+binding.editText2.inputType)
                     p0.setBackgroundResource(R.drawable.ic_preview_close)
-                    viewModel.isPreview = false
-                    viewBinding.editText2.transformationMethod = PasswordTransformationMethod.getInstance()
-                    viewBinding.editText2.setSelection(viewBinding.editText2.text.length)
+                    model.isPreview = false
+                    binding.editText2.transformationMethod = PasswordTransformationMethod.getInstance()
+                    binding.editText2.setSelection(binding.editText2.text.length)
                 }else{
                     Log.d(TAG, "onClick: 可见")
-                    Log.d(TAG, "onClick: "+viewBinding.editText2.inputType)
+                    Log.d(TAG, "onClick: "+binding.editText2.inputType)
                     p0.setBackgroundResource(R.drawable.ic_preview_open)
-                    viewModel.isPreview = true
-                    viewBinding.editText2.transformationMethod = HideReturnsTransformationMethod.getInstance()
-                    viewBinding.editText2.setSelection(viewBinding.editText2.text.length)
+                    model.isPreview = true
+                    binding.editText2.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                    binding.editText2.setSelection(binding.editText2.text.length)
                 }
             }
             null -> Toast.makeText(this,"NULL",Toast.LENGTH_SHORT).show()

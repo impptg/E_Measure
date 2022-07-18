@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.changePswd.ChangePswdActivity">
-
+    <ProgressBar
+        android:id="@+id/pb_change"
+        android:elevation="10dp"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleLarge"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/bar_pswd"
         android:layout_width="match_parent"
@@ -24,128 +35,163 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:layout_constraintTop_toBottomOf="@+id/bar_pswd"
+            tools:layout_editor_absoluteX="10dp">
 
-    <EditText
-        android:id="@+id/older_pswd"
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/border_bg"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/new_pswd"
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/border_bg"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/older_pswd"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/older_pswd"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/change_item_padding"
+                    android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/new_pswd1"
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/border_bg"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/new_pswd"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/new_pswd"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical|end"
+                        android:text="账    号:  "
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/changePswd_button"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/border_bg"
-        android:text="确认"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/new_pswd1"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="@+id/new_pswd1"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                    <TextView
+                        android:id="@+id/tv_change"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_size_s"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/change_item_h"
+                        android:layout_weight="4"
+                        android:gravity="center_vertical"
+                        android:text="user" />
+                </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="140dp"
-        android:text="请输入原始密码"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_100" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="请输入新密码"
-        app:layout_constraintStart_toStartOf="@+id/older_pswd"
-        app:layout_constraintTop_toBottomOf="@+id/older_pswd" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/change_item_padding"
+                    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        android:text="再次填写确认"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/new_pswd" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical|end"
+                        android:text="原密码:  "
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:text="原密码"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/older_pswd"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/older_pswd" />
+                    <EditText
+                        android:id="@+id/et_old"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/change_item_h"
+                        android:layout_weight="4"
+                        android:background="@drawable/border_bg"
+                        android:gravity="center_vertical|start"
+                        android:singleLine="true"
+                        android:inputType="textPassword"
+                        android:maxLength="20"
+                        android:text="" />
+                </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="新密码"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/new_pswd"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="@+id/new_pswd" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_100" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="确认密码"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/new_pswd1"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="@+id/new_pswd1" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/change_item_padding"
+                    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:autoSizeTextType="uniform"
-        android:text="密码必须是8-16位的英文字母、数字、字符组合（不能是纯数字）"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/new_pswd1" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical|end"
+                        android:text="新密码:  "
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
 
+                    <EditText
+                        android:id="@+id/et_new"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/change_item_h"
+                        android:layout_weight="4"
+                        android:background="@drawable/border_bg"
+                        android:gravity="center_vertical|start"
+                        android:singleLine="true"
+                        android:inputType="textPassword"
+                        android:maxLength="20"
+                        android:text="" />
+                </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_100" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/change_item_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center_vertical|end"
+                        android:text="确认新密码:  "
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_new2"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/change_item_h"
+                        android:layout_weight="4"
+                        android:background="@drawable/border_bg"
+                        android:gravity="center_vertical|start"
+                        android:singleLine="true"
+                        android:maxLength="20"
+                        android:inputType="textPassword"
+                        android:text="" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/change_button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_circle"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_check_24"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            app:tint="@color/white" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

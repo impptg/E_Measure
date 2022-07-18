@@ -1,4 +1,4 @@
-package com.pptg.e_measure.db.history
+package com.pptg.e_measure.repository.db.history
 
 import androidx.room.*
 import com.pptg.e_measure.bean.HistoryBean

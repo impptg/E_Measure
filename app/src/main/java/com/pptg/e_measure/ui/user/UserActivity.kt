@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.ActivityLoginBinding
 import com.pptg.e_measure.databinding.ActivityUserBinding
-import com.pptg.e_measure.sp.UserSP
+import com.pptg.e_measure.repository.sp.UserSP
 import com.pptg.e_measure.ui.login.LoginViewModel
 import com.pptg.e_measure.view.OnStateChangedListener
 

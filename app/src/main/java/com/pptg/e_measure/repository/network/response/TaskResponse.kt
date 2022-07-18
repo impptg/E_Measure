@@ -1,4 +1,4 @@
-package com.pptg.e_measure.network.response
+package com.pptg.e_measure.repository.network.response
 
 import com.pptg.e_measure.bean.TaskBean
 

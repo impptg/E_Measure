@@ -5,13 +5,13 @@ import android.app.Application
 import android.content.Context
 import android.view.KeyEvent
 import android.widget.Toast
-import com.pptg.e_measure.db.DBManager
+import com.pptg.e_measure.repository.db.DBManager
 
 class EMApplication : Application() {
 
     companion object {
         // 是否Mock
-        const val ISMOCK = true
+        const val ISMOCK = false
         // 正式地址
         const val HOST_URL = "https://www.emeasure.cn/myadmin/"
         // MOCK地址
@@ -25,6 +25,8 @@ class EMApplication : Application() {
         const val TASK_ID = "taskID"
         // sp
         const val USER_SP = "user"
+        const val DEVICE_ADDRESS = "device_address"
+        const val DEVICE_NAME = "device_name"
     }
 
     override fun onCreate() {

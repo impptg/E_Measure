@@ -4,15 +4,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.pptg.e_measure.R
 import android.content.Context
+import android.content.Intent
 import android.os.IBinder
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.lifecycle.ViewModelProvider
 import com.pptg.e_measure.databinding.ActivityChangePwdBinding
+import com.pptg.e_measure.repository.sp.UserSP
+import com.pptg.e_measure.ui.login.LoginActivity
 
 class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
 
@@ -21,14 +25,48 @@ class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        binding.changePswdButton.setOnClickListener(this)
-        binding.olderPswd.setText(model.older_pswd)
-        binding.newPswd.setText(model.new_pswd)
-        binding.newPswd1.setText(model.new_pswd1)
-
+        binding.changeButton.setOnClickListener(this)
+        binding.etOld.setText(model.older_pswd)
+        binding.etNew.setText(model.new_pswd)
+        binding.etNew2.setText(model.new_pswd1)
+        binding.tvChange.setText(model.user_id)
         setSupportActionBar(binding.tbPswd)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        observeChangePswd()
+    }
 
+    fun observeChangePswd(){
+        model.isChanged.observe(this,{
+            when(it){
+                ChangedEnum.Init->{}
+                ChangedEnum.START->{
+                    binding.pbChange.visibility = View.VISIBLE
+                }
+                ChangedEnum.SUCCESS->{
+                    // 修改成功
+                    // 关动画
+                    binding.pbChange.visibility = View.GONE
+                    // 清除默认密码
+                    UserSP.setUser {
+                        putString(UserSP.USER_PSWD,"")
+                    }
+                    // 重新登陆，清空返回栈
+                    val intent: Intent = Intent(this, LoginActivity::class.java)
+                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    // 杀掉页面
+                    this@ChangePswdActivity.finish()
+                }
+                ChangedEnum.FAILED->{
+                    binding.pbChange.visibility = View.GONE
+                    Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
+                }
+                ChangedEnum.WRONG->{
+                    binding.pbChange.visibility = View.GONE
+                    Toast.makeText(this,"两次输入的密码不一致",Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
     }
     @CallSuper
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
@@ -64,10 +102,10 @@ class ChangePswdActivity : AppCompatActivity(),View.OnClickListener{
 
     override fun onClick(p0: View?) {
         when (p0?.id) {
-            R.id.changePswd_button -> {
-                model.older_pswd = binding.olderPswd.text.toString()
-                model.new_pswd = binding.newPswd.text.toString()
-                model.new_pswd1 = binding.newPswd1.text.toString()
+            R.id.change_button -> {
+                model.older_pswd = binding.etOld.text.toString()
+                model.new_pswd = binding.etNew.text.toString()
+                model.new_pswd1 = binding.etNew2.text.toString()
                 model.changePswd()
             }
         }

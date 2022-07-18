@@ -1,4 +1,4 @@
-package com.pptg.e_measure.db.base
+package com.pptg.e_measure.repository.db.base
 
 import androidx.room.*
 

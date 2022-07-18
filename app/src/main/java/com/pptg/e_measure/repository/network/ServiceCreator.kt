@@ -1,18 +1,17 @@
-package com.pptg.e_measure.network
+package com.pptg.e_measure.repository.network
 
 import com.pptg.e_measure.EMApplication
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+/**
+ * 根据EMApplication的配置
+ * 创建Retrofit
+ */
 object ServiceCreator {
-
-    lateinit var BASE_URL:String
-
-    init {
-        when(EMApplication.ISMOCK){
-            true -> BASE_URL = EMApplication.MOCK_URL
-            false -> BASE_URL = EMApplication.HOST_URL
-        }
+    private val BASE_URL= when(EMApplication.ISMOCK){
+        true -> EMApplication.MOCK_URL
+        false -> EMApplication.HOST_URL
     }
 
     private val retrofit = Retrofit.Builder()
@@ -23,5 +22,4 @@ object ServiceCreator {
     fun <T> create(serviceClass: Class<T>): T = retrofit.create(serviceClass)
 
     inline fun <reified T> create(): T = create(T::class.java)
-
 }
