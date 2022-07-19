@@ -25,14 +25,9 @@
         android:theme="@style/Theme.E_Measure"
         android:usesCleartextTraffic="true">
         <activity
-<<<<<<< HEAD
             android:name=".ui.History.HistoryActivity"
             android:exported="true"
             android:label="历史记录"/>
-=======
-            android:name=".ui.ChangeFontActivity"
-            android:exported="false" />
->>>>>>> e1914201e88bc0e171310afe8cabd1a8865e8be6
         <activity
             android:name=".ui.user.UserActivity"
             android:exported="true"
@@ -49,11 +44,7 @@
         <activity
             android:name=".ui.changePswd.ChangePswdActivity"
             android:exported="true"
-<<<<<<< HEAD
             android:label="修改密码" />
-=======
-            android:label="@string/title_activity_main" />
->>>>>>> e1914201e88bc0e171310afe8cabd1a8865e8be6
         <activity
             android:name=".MainActivity"
             android:exported="true"

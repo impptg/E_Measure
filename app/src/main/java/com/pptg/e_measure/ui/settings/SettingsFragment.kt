@@ -10,8 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.databinding.FragmentSettingsBinding
-import com.pptg.e_measure.ui.ChangeFontActivity
-import com.pptg.e_measure.ui.settings.SettingsViewModel
 
 class SettingsFragment: Fragment() {
     private lateinit var viewModel: SettingsViewModel
@@ -40,9 +38,6 @@ class SettingsFragment: Fragment() {
         adapter = SettingsAdapter(this,viewModel.itemList)
         binding.rvSettings.adapter = adapter
 
-        //测试
-        val intent = Intent(context,ChangeFontActivity::class.java)
-        startActivity(intent)
         return root
     }
     override fun onStop() {
