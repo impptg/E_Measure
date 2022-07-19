@@ -30,5 +30,7 @@
     <!--修改密码-->
     <dimen name="change_item_h">40dp</dimen>
     <dimen name="change_item_padding">8dp</dimen>
+
+    <dimen name="space_8">8dp</dimen>
     
 </resources>

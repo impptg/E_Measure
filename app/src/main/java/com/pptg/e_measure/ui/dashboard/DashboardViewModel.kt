@@ -26,5 +26,9 @@ class DashboardViewModel : ViewModel() {
         mList.add(mBean3)
         val mBean4 = DashboardBean("AQ2e20","测试测试测试","2022-0719 11:33",DashboardEnum.FINISH)
         mList.add(mBean4)
+        val mBean5 = DashboardBean("CZ2220","测试测试测试","2022-0719 10:30",DashboardEnum.FINISH)
+        mList.add(mBean5)
+        val mBean6 = DashboardBean("CZ2220","测试测试测试","2022-0719 10:30",DashboardEnum.FINISH)
+        mList.add(mBean6)
     }
 }

@@ -9,5 +9,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_Dashboard"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:paddingBottom="50dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

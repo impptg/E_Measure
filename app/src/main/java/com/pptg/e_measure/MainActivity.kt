@@ -3,10 +3,9 @@ package com.pptg.e_measure
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.KeyEvent
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -17,10 +16,19 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.pptg.e_measure.databinding.ActivityLoginBinding
 import com.pptg.e_measure.databinding.ActivityMainBinding
-import com.pptg.e_measure.ui.login.LoginViewModel
 import com.pptg.e_measure.ui.search.SearchActivity
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import android.util.TypedValue
+
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+
+import android.view.Gravity
+
+import android.graphics.Color
+import android.widget.FrameLayout
+import com.pptg.e_measure.utils.BadgeUtil
+
 
 class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListener {
 
@@ -54,7 +62,6 @@ class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListe
     }
 
 
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_toolbar_menu,menu)
         return true
@@ -71,6 +78,10 @@ class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListe
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        val mNavigation:BottomNavigationView = binding.navView
+        val itemView:BottomNavigationMenuView = mNavigation.getChildAt(0) as BottomNavigationMenuView
+        BadgeUtil.QBadge(this,itemView.getChildAt(1),5)
+
         mMenu = menu
         checkOptionMenu()
         return super.onPrepareOptionsMenu(menu)

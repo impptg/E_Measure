@@ -103,8 +103,10 @@
 ### 22.7.19
 1. 新增历史记录页面
 2. 新增审批流程页面
+3. 底部未完成红点提示
 
-<img src="markdown/16582032629715.jpg" width = 25%/>
+<img src="markdown/16582032629715.jpg" width = 25%/><img src="markdown/16582158094136.jpg" width = 25%/>
+
 
 ## 二、项目结构
 1. bean：各种基础的bean
