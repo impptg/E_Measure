@@ -11,7 +11,7 @@ class EMApplication : Application() {
 
     companion object {
         // 是否Mock
-        const val ISMOCK = false
+        const val ISMOCK = true
         // 正式地址
         const val HOST_URL = "https://www.emeasure.cn/myadmin/"
         // MOCK地址

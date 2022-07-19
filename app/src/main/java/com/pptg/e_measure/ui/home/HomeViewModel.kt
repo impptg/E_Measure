@@ -25,7 +25,7 @@ class HomeViewModel():ViewModel() {
         private const val TAG = "HomeViewModel"
     }
     // 主页面任务报表
-    var mList:MutableList<TaskBean> = ArrayList<TaskBean>()
+    var mList:MutableList<TaskBean> = ArrayList()
     var isRefresh:MutableLiveData<HomeEnum> = MutableLiveData(HomeEnum.Init)
 
     init {

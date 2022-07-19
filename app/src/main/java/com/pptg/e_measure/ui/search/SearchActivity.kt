@@ -27,17 +27,31 @@ class SearchActivity : AppCompatActivity() ,View.OnClickListener{
         binding.searchBtn.setOnClickListener(this)
         binding.searchContent.setText(model.searchContent)
         val layoutManager = LinearLayoutManager(this)
-        adapter = SearchAdapter(this,model.searchList)
+        adapter = SearchAdapter(this,model.mSearchList)
         binding.searchResult.adapter = adapter
         binding.searchResult.layoutManager = layoutManager
-        model.mSearchList.observe(this,{
-            adapter.searchList = it
-            adapter.notifyDataSetChanged()
+
+        model.isSearch.observe(this,{
+            when(it){
+                SearchEnum.Init -> {}
+                SearchEnum.START -> {
+                    binding.pbSearch.visibility = View.VISIBLE
+                    model.mSearchList.clear()
+                }
+                SearchEnum.SUCCESS -> {
+                    binding.pbSearch.visibility = View.GONE
+                    adapter.searchList = model.mSearchList
+                    adapter.notifyDataSetChanged()
+                }
+                SearchEnum.FAILED -> {
+                    binding.pbSearch.visibility = View.GONE
+                }
+            }
         })
+
         binding.searchContent.addTextChangedListener {
             model.searchContent = binding.searchContent.text.toString()
             model.search()
-            model.searchList.clear()
         }
     }
 
@@ -80,5 +94,4 @@ class SearchActivity : AppCompatActivity() ,View.OnClickListener{
             }
         }
     }
-
 }

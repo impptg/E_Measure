@@ -19,5 +19,6 @@ object BadgeUtil {
             .setBadgeNumber(i)
             .setBadgeGravity(Gravity.END or Gravity.TOP)
             .setGravityOffset(30f, 0f, true)
+            .setShowShadow(false)
     }
 }

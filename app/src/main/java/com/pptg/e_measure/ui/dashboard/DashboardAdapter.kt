@@ -28,27 +28,27 @@ class DashboardAdapter(var mList:List<DashboardBean>):
             when(mBean.status){
                 DashboardEnum.TO_DO -> {
                     cv_status.setCardBackgroundColor(EMApplication.context.getResources()
-                        .getColor(R.color.blue_300,null))
+                        .getColor(R.color.status_1,null))
                     tv_status.text = "待测量"
                 }
                 DashboardEnum.TO_SUBMIT -> {
                     cv_status.setCardBackgroundColor(EMApplication.context.getResources()
-                        .getColor(R.color.orange_700,null))
+                        .getColor(R.color.status_2,null))
                     tv_status.text = "待提交"
                 }
                 DashboardEnum.REVIEWING -> {
                     cv_status.setCardBackgroundColor(EMApplication.context.getResources()
-                        .getColor(R.color.hotpink,null))
+                        .getColor(R.color.status_3,null))
                     tv_status.text = "审核中"
                 }
                 DashboardEnum.MODIFY -> {
                     cv_status.setCardBackgroundColor(EMApplication.context.getResources()
-                        .getColor(R.color.red,null))
+                        .getColor(R.color.status_4,null))
                     tv_status.text = "请修改"
                 }
                 DashboardEnum.FINISH -> {
                     cv_status.setCardBackgroundColor(EMApplication.context.getResources()
-                        .getColor(R.color.green_400,null))
+                        .getColor(R.color.status_5,null))
                     tv_status.text = "已完成"
                 }
             }
