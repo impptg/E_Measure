@@ -1,6 +1,7 @@
 package com.pptg.e_measure.network
 
 import com.pptg.e_measure.network.response.ChangePswdResponse
+import com.pptg.e_measure.network.response.HistoryResponse
 import com.pptg.e_measure.network.response.LoginResponse
 import com.pptg.e_measure.network.response.TaskResponse
 import retrofit2.Call
@@ -24,5 +25,6 @@ interface ApiNet {
 
     @GET("task")
     fun Task(): Call<TaskResponse>
+
 
 }
