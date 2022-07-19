@@ -28,7 +28,6 @@ class LoginViewModel : ViewModel(){
         user_read = UserSP.getUser(UserSP.USER_READ) == "true"
     }
 
-
     fun Login(){
         isLogin.value = LoginEnum.START
         GlobalScope.launch(Dispatchers.IO) {
