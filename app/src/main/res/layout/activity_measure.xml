@@ -89,10 +89,9 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:shadowColor="@color/gray_100"
-                        android:shadowRadius="3.0"
                         android:text="属性名称"
                         android:textColor="@color/white"
-                        android:textSize="20dp" />
+                        android:textSize="@dimen/font_size_s" />
 
                 </LinearLayout>
 
@@ -120,10 +119,9 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:shadowColor="@color/gray_100"
-                            android:shadowRadius="3.0"
                             android:text="上限"
                             android:textColor="@color/white"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/font_size_s" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -144,10 +142,9 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:shadowColor="@color/gray_100"
-                            android:shadowRadius="3.0"
                             android:text="下限"
                             android:textColor="@color/white"
-                            android:textSize="20dp" />
+                            android:textSize="@dimen/font_size_s" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -164,10 +161,9 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:shadowColor="@color/gray_100"
-                        android:shadowRadius="3.0"
                         android:text="测量值"
                         android:textColor="@color/white"
-                        android:textSize="20dp" />
+                        android:textSize="@dimen/font_size_s" />
                 </LinearLayout>
             </LinearLayout>
 

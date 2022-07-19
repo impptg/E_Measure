@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -19,14 +18,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.pptg.e_measure.databinding.ActivityMainBinding
 import com.pptg.e_measure.ui.search.SearchActivity
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import android.util.TypedValue
 
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
-
-import android.view.Gravity
-
-import android.graphics.Color
-import android.widget.FrameLayout
 import com.pptg.e_measure.utils.BadgeUtil
 
 
@@ -80,7 +72,7 @@ class MainActivity : AppCompatActivity(),NavController.OnDestinationChangedListe
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         val mNavigation:BottomNavigationView = binding.navView
         val itemView:BottomNavigationMenuView = mNavigation.getChildAt(0) as BottomNavigationMenuView
-        BadgeUtil.QBadge(this,itemView.getChildAt(1),5)
+        BadgeUtil.QBadge(this,itemView.getChildAt(1),4)
 
         mMenu = menu
         checkOptionMenu()

@@ -1,9 +1,11 @@
 package com.pptg.e_measure.utils
 
+import android.app.Activity
 import android.content.Context
 import android.view.View
 import q.rorbin.badgeview.QBadgeView
 import android.view.Gravity
+import com.pptg.e_measure.ui.dashboard.DashboardFragment
 
 
 object BadgeUtil {
@@ -13,7 +15,7 @@ object BadgeUtil {
      * @param view  要显示的控件
      * @param i 数量（点内数字）
      */
-    fun QBadge(context: Context?, view: View?, i: Int) {
+    fun QBadge(context: Context, view: View?, i: Int) {
         QBadgeView(context)
             .bindTarget(view)
             .setBadgeNumber(i)

@@ -132,8 +132,11 @@ class MeasureActivity : AppCompatActivity() {
         super.onResume()
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter())
         if (mBLEService != null && mDeviceAddress != null) {
-            val result = mBLEService!!.connect(mDeviceAddress)
-            Log.d(TAG, "Connect request result=$result")
+            try {
+                val result = mBLEService!!.connect(mDeviceAddress)
+            }catch (e:Exception){
+                e.printStackTrace()
+            }
         }
     }
 

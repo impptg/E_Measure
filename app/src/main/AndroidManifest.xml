@@ -27,7 +27,7 @@
         <activity
             android:name=".ui.History.HistoryActivity"
             android:exported="true"
-            android:label="@string/title_history"/>
+            android:label="历史记录"/>
         <activity
             android:name=".ui.user.UserActivity"
             android:exported="true"
