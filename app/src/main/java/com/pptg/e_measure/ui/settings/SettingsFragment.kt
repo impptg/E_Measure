@@ -1,5 +1,6 @@
 package com.pptg.e_measure.ui.settings
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.databinding.FragmentSettingsBinding
-import com.pptg.e_measure.ui.settings.SettingsViewModel
 
 class SettingsFragment: Fragment() {
     private lateinit var viewModel: SettingsViewModel
