@@ -100,6 +100,11 @@
 
 <img src="markdown/C080D45F124B551DBB5B87DD2AC48019.jpg" width = 25%/>
 
+### 22.7.19
+1. 新增历史记录页面
+2. 新增审批流程页面
+
+<img src="markdown/16582032629715.jpg" width = 25%/>
 
 ## 二、项目结构
 1. bean：各种基础的bean
