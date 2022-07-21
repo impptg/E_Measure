@@ -1,57 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cv_item"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/padding_dp"
-    android:layout_marginRight="@dimen/padding_dp"
-    android:layout_marginBottom="5dp"
-    android:layout_marginTop="5dp"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="8dp">
-    <LinearLayout
-        android:id="@+id/ll_item"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/tv_name"
-            android:text="CZ2553"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:paddingLeft="@dimen/padding_dp"
-            android:layout_marginTop="5dp"/>
-        <TextView
-            android:id="@+id/tv_disp"
-            android:text="xxx数据表"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="16dp"
-            android:paddingLeft="@dimen/padding_dp"/>
-        <TextView
-            android:id="@+id/tv_index"
-            android:text="001"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            android:textStyle="bold"
-            android:paddingRight="@dimen/padding_dp"
-            android:layout_marginBottom="5dp"/>
+    tools:context=".ui.History.HistoryActivity"
+    >
 
-        <TextView
-            android:id="@+id/tv_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:text="2022-07-18" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:id="@+id/ll_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="@dimen/padding_dp"
+                android:text="CZ2553"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_disp"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:paddingLeft="@dimen/padding_dp"
+                android:text="xxx数据表"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/tv_index"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="right"
+                android:paddingRight="@dimen/padding_dp"
+                android:text="001"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:paddingLeft="20dp"
+                android:text="2022-07-18" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/select"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cv_item"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cv_item"
+        app:srcCompat="@drawable/ic_baseline_selector_check_false" />
+</androidx.constraintlayout.widget.ConstraintLayout>

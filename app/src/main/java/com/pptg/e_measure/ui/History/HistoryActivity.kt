@@ -5,15 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.Toast
 import androidx.annotation.CallSuper
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
+import com.pptg.e_measure.bean.HistoryBean
 import com.pptg.e_measure.databinding.ActivityChangePwdBinding
 import com.pptg.e_measure.databinding.ActivityHistoryBinding
 import com.pptg.e_measure.ui.changePswd.ChangePswdViewModel
@@ -34,13 +38,22 @@ class HistoryActivity : AppCompatActivity() ,View.OnClickListener{
         binding.historyRecord.adapter = adapter
         binding.historyRecord.layoutManager = layoutManager
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.history_toolbar_menu,menu)
+        return true
+    }
     //菜单的响应事件
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             android.R.id.home -> {
-                Log.d(TAG,"点击返回按钮")
                 finish()
                 return true
+            }
+            R.id.search -> {
+                return true
+            }
+            R.id.manage -> {
             }
         }
         return super.onOptionsItemSelected(item)
@@ -83,6 +96,10 @@ class HistoryActivity : AppCompatActivity() ,View.OnClickListener{
     }
 
     override fun onClick(p0: View?) {
-        TODO("Not yet implemented")
+        when (p0?.id){
+            R.id.select -> {
+
+            }
+        }
     }
 }

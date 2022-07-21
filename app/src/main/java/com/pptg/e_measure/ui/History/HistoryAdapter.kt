@@ -3,6 +3,7 @@ package com.pptg.e_measure.ui.History
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
@@ -12,12 +13,18 @@ import com.pptg.e_measure.bean.HistoryBean
 import com.pptg.e_measure.bean.TaskBean
 
 class HistoryAdapter(var activity: HistoryActivity,var historyList: List<HistoryBean>) : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
+    companion object{
+        const val STATE_DEFAULT = false
+    }
+    var mEDIT_MODE = STATE_DEFAULT           //默认状态
+
     inner class ViewHolder(view: View) :RecyclerView.ViewHolder(view) {
         val tv_name: TextView = view.findViewById(R.id.tv_name)
         val tv_disp: TextView = view.findViewById(R.id.tv_disp)
         val tv_index: TextView = view.findViewById(R.id.tv_index)
         val tv_time: TextView = view.findViewById(R.id.tv_time)
         val cv_item: CardView = view.findViewById(R.id.cv_item)
+        val select : ImageView = view.findViewById(R.id.select)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -41,16 +48,32 @@ class HistoryAdapter(var activity: HistoryActivity,var historyList: List<History
                     .getColor(R.color.green_500,null))
         }
 
-
+//        if (mEDIT_MODE == STATE_DEFAULT){
+//            //默认不显示
+//            holder.select.visibility = View.GONE
+//        }else{
+//            holder.select.visibility = View.VISIBLE
+//            if (holder.select.isSelected){
+//                holder.select.setImageResource(R.drawable.ic_checked_foreground)
+//            }else{
+//                holder.select.setImageResource(R.drawable.ic_unchecked_foreground)
+//            }
+//        }
         holder.apply {
             tv_name.text = mBean.name
             tv_disp.text = mBean.disp
             tv_index.text = mBean.taskID.toString()
-            tv_time.text = mBean.createTime.toString()
+            tv_time.text = mBean.createTime
+
         }
     }
 
     override fun getItemCount(): Int {
         return historyList.size
     }
+
+//    fun setEditMode(editMode : Boolean){
+//        mEDIT_MODE = editMode
+//        notifyDataSetChanged()
+//    }
 }
