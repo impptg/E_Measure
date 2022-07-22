@@ -3,6 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/bg_edittext.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_back.xml" value="0.1" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_add_chart_24.xml" value="0.1" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_arrow_drop_up_24.xml" value="0.1" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_arrow_right_alt_24.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_bluetooth_24.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_list.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_remove_red_eye_24.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_security_24.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_baseline_selector_check_false.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_delete_background.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_delete_foreground.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_launcher_background.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_preview_close.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/ic_preview_open.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/search_background.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/search_foreground.xml" value="0.102" />
+        <entry key="..\:/Emeasure/E_Measure/app/src/main/res/drawable/selector_checkbox.xml" value="0.102" />
         <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/activity_change_pwd.xml" value="0.4239583333333333" />
         <entry key="..\:/Emeasure/E_Measure/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.32760416666666664" />
