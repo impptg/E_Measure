@@ -73,7 +73,8 @@
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2796875" />
         <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/item_blank.xml" value="0.2328125" />
-        <entry key="app/src/main/res/layout/item_dashboard.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/item_dashboard.xml" value="0.27396373056994816" />
+        <entry key="app/src/main/res/layout/item_history.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_measure.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/item_scan.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_settings.xml" value="0.335" />

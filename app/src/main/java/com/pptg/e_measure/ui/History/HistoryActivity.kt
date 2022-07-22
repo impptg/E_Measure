@@ -34,15 +34,36 @@ class HistoryActivity : AppCompatActivity() ,View.OnClickListener{
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val layoutManager = LinearLayoutManager(this)
-        adapter = HistoryAdapter(this,model.mList)
+        adapter = HistoryAdapter(model.mList,model.isSelect,model.mSelectList)
         binding.historyRecord.adapter = adapter
         binding.historyRecord.layoutManager = layoutManager
+
+        adapter.setOnItemClickListener(object :HistoryAdapter.OnItemClickListener{
+            override fun onItemClick(view: View, pos: Int) {
+                if(model.isSelect){
+                    // TODO 选择
+                    model.selectItem(pos)
+                }else{
+                    // TODO 进入详情
+
+                }
+            }
+
+            override fun onItemLongClick(view: View, pos: Int): Boolean {
+                model.changeSelectStatus()
+                adapter.isSelecting = model.isSelect
+                adapter.notifyDataSetChanged()
+                binding.selectBottom.visibility = View.VISIBLE
+                return true
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.history_toolbar_menu,menu)
         return true
     }
+
     //菜单的响应事件
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
@@ -54,6 +75,14 @@ class HistoryActivity : AppCompatActivity() ,View.OnClickListener{
                 return true
             }
             R.id.manage -> {
+                Log.d(TAG, "onOptionsItemSelected: ")
+                model.changeSelectStatus()
+                adapter.isSelecting = model.isSelect
+                adapter.notifyDataSetChanged()
+                binding.selectBottom.visibility = when(model.isSelect){
+                    true -> View.GONE
+                    else -> View.VISIBLE
+                }
             }
         }
         return super.onOptionsItemSelected(item)
@@ -97,7 +126,7 @@ class HistoryActivity : AppCompatActivity() ,View.OnClickListener{
 
     override fun onClick(p0: View?) {
         when (p0?.id){
-            R.id.select -> {
+            R.id.select_all -> {
 
             }
         }
