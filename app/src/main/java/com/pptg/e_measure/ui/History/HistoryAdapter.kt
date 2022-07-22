@@ -16,7 +16,7 @@ import com.pptg.e_measure.bean.DashboardEnum
 import com.pptg.e_measure.bean.DashboardBean
 import com.pptg.e_measure.bean.TaskBean
 
-class HistoryAdapter(var mList: List<DashboardBean>,var isSelecting:Boolean,var mSelectList:HashMap<Int,Boolean>) : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
+class HistoryAdapter(var mList: List<DashboardBean>,var isSelect:HistoryEnum.Select?,var mSelectList:HashMap<Int,Boolean>) : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
     companion object {
         private const val TAG = "HistoryAdapter"
     }
@@ -80,13 +80,13 @@ class HistoryAdapter(var mList: List<DashboardBean>,var isSelecting:Boolean,var 
                     tv_status.text = "已完成"
                 }
             }
-            cb_history.visibility = when (isSelecting) {
-                    true -> View.VISIBLE
+            cb_history.visibility = when (isSelect) {
+                    HistoryEnum.Select.START -> View.VISIBLE
                     else -> View.GONE
                 }
-            Log.d(TAG, "onBindViewHolder: " + isSelecting)
+            Log.d(TAG, "onBindViewHolder: " + isSelect)
             Log.d(TAG, "onBindViewHolder: " + cb_history.visibility)
-            cb_history.isChecked = isSelecting and (mSelectList[position] == true)
+            cb_history.isChecked = (isSelect == HistoryEnum.Select.START) and (mSelectList[position] == true)
 
             ll_history.setOnLongClickListener{
                 mItemClickListener.onItemLongClick(itemView,position)

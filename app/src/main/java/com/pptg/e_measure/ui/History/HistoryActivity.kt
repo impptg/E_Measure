@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.CallSuper
@@ -34,13 +35,14 @@ class HistoryActivity : AppCompatActivity() ,View.OnClickListener{
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val layoutManager = LinearLayoutManager(this)
-        adapter = HistoryAdapter(model.mList,model.isSelect,model.mSelectList)
+        adapter = HistoryAdapter(model.mList,model.isSelect.value,model.mSelectList)
         binding.historyRecord.adapter = adapter
         binding.historyRecord.layoutManager = layoutManager
 
+        // 监听item点击
         adapter.setOnItemClickListener(object :HistoryAdapter.OnItemClickListener{
             override fun onItemClick(view: View, pos: Int) {
-                if(model.isSelect){
+                if(model.isSelect.value == HistoryEnum.Select.START){
                     // TODO 选择
                     model.selectItem(pos)
                 }else{
@@ -51,12 +53,48 @@ class HistoryActivity : AppCompatActivity() ,View.OnClickListener{
 
             override fun onItemLongClick(view: View, pos: Int): Boolean {
                 model.changeSelectStatus()
-                adapter.isSelecting = model.isSelect
-                adapter.notifyDataSetChanged()
-                binding.selectBottom.visibility = View.VISIBLE
                 return true
             }
         })
+
+        // 监听选择状态
+        model.isSelect.observe(this,{
+            when(it){
+                HistoryEnum.Select.INIT -> {
+                    // 底部配置
+                    binding.cvHistory.visibility = View.GONE
+                    // CheckBox
+                    adapter.isSelect = it
+                    adapter.notifyDataSetChanged()
+
+                }
+                HistoryEnum.Select.REFRESH -> {
+                    adapter.mList = model.mList
+                    adapter.notifyDataSetChanged()
+                }
+                else -> {
+                    // 底部配置
+                    binding.cvHistory.visibility = View.VISIBLE
+                    // CheckBox
+                    adapter.isSelect = it
+                    adapter.notifyDataSetChanged()
+                }
+            }
+        })
+
+        // 监听删除状态
+        model.isDelete.observe(this,{
+            when(it){
+                HistoryEnum.Delete.INIT -> {}
+                HistoryEnum.Delete.START -> {}
+                HistoryEnum.Delete.SUCCESS -> {}
+                HistoryEnum.Delete.FAILED -> {}
+            }
+        })
+
+        binding.cbHistory.setOnClickListener(this)
+        binding.btnCancel.setOnClickListener(this)
+        binding.btnDelete.setOnClickListener(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -75,14 +113,7 @@ class HistoryActivity : AppCompatActivity() ,View.OnClickListener{
                 return true
             }
             R.id.manage -> {
-                Log.d(TAG, "onOptionsItemSelected: ")
                 model.changeSelectStatus()
-                adapter.isSelecting = model.isSelect
-                adapter.notifyDataSetChanged()
-                binding.selectBottom.visibility = when(model.isSelect){
-                    true -> View.GONE
-                    else -> View.VISIBLE
-                }
             }
         }
         return super.onOptionsItemSelected(item)
@@ -126,8 +157,20 @@ class HistoryActivity : AppCompatActivity() ,View.OnClickListener{
 
     override fun onClick(p0: View?) {
         when (p0?.id){
-            R.id.select_all -> {
-
+            R.id.cb_history -> {
+                val cb = p0 as CheckBox
+                if(cb.isChecked){
+                    model.selectAll()
+                }else{
+                    model.clearAll()
+                }
+            }
+            R.id.btn_delete -> {
+                model.delete()
+                adapter.notifyDataSetChanged()
+            }
+            R.id.btn_cancel -> {
+                model.changeSelectStatus()
             }
         }
     }
