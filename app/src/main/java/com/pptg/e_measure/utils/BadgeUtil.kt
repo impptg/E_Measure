@@ -6,6 +6,7 @@ import android.view.View
 import q.rorbin.badgeview.QBadgeView
 import android.view.Gravity
 import com.pptg.e_measure.ui.dashboard.DashboardFragment
+import q.rorbin.badgeview.Badge
 
 
 object BadgeUtil {
@@ -22,5 +23,6 @@ object BadgeUtil {
             .setBadgeGravity(Gravity.END or Gravity.TOP)
             .setGravityOffset(30f, 0f, true)
             .setShowShadow(false)
+            .setOnDragStateChangedListener { dragState, badge, targetView -> }
     }
 }

@@ -20,6 +20,8 @@ import com.google.android.material.tabs.TabLayoutMediator.TabConfigurationStrate
 import com.pptg.e_measure.EMApplication
 import com.pptg.e_measure.R
 import com.pptg.e_measure.databinding.FragmentDashboardBinding
+import com.pptg.e_measure.ui.dashboard.pagers.DashboardFragment1
+import com.pptg.e_measure.ui.dashboard.pagers.DashboardFragment2
 import com.pptg.e_measure.ui.home.HomeAdapter
 import com.pptg.e_measure.utils.BadgeUtil
 

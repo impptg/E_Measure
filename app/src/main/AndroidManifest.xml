@@ -27,7 +27,7 @@
         <activity
             android:name=".ui.History.HistoryActivity"
             android:exported="true"
-            android:label="历史记录"/>
+            android:label="历史记录" />
         <activity
             android:name=".ui.user.UserActivity"
             android:exported="true"
@@ -41,8 +41,7 @@
         <activity
             android:name=".ui.measure.MeasureActivity"
             android:exported="true"
-            android:label="数据测量">
-        </activity>
+            android:label="数据测量"></activity>
         <activity
             android:name=".ui.changePswd.ChangePswdActivity"
             android:exported="true"
@@ -50,8 +49,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/title_activity_main">
-        </activity>
+            android:label="@string/title_activity_main"></activity>
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true"
@@ -62,8 +60,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".ble.BLEService"
-            android:enabled="true"/>
+
+        <service
+            android:name=".ble.BLEService"
+            android:enabled="true" />
     </application>
 
 </manifest>
